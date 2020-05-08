@@ -1,172 +1,171 @@
 <html>
-	<head>
-		<title>Budi FIT - Pocetna strana</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
- 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<!--script language="JavaScript" src="javascript.js"-->
-		<meta charset="UTF-8">
+<head>
+	<title>Budi FIT - Pocetna strana</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!--script language="JavaScript" src="javascript.js"-->
+	<meta charset="UTF-8">
+	
+<!-- Namena ovog fajla, kao i fajla style.css je da se definise sablon koji ce biti koriscen kroz izradu projekta radi konzistentnosti,
+	tako da bi bilo pozeljno prvo utvrditi sve stilske odluke pre zapocinjanja procesa implementacije -->
 		
-	<!-- Namena ovog fajla, kao i fajla style.css je da se definise sablon koji ce biti koriscen kroz izradu projekta radi konzistentnosti,
-		tako da bi bilo pozeljno prvo utvrditi sve stilske odluke pre zapocinjanja procesa implementacije -->
-			
-	<!-- Otvorena pitanja:  navbar 	- da li ostaviti da se otvara po celoj sirini, jer ne znam kako da namestim da se ceo sadrzaj pomeri udesno kad se otvori
-							logo 	- naci sliku i logo sajta 
-	-->
-
-	</head>
-	<body>
-		<div class="container-fluid">
-		
-			<!--header-->
-			<div class="row header">
-				<div class="col-8 col-md-9 col-lg-10">
-					<a href="index.html"><h1>Budi FIT</h1></a>
-				</div>
-				<div class="col-4 col-md-3 col-lg-2">
-					<form>
-						<div class="container">
-							<div class="row">
-								<div class="col-12 p-1">
-									<a href="login.html"><button type="button" class="btn btn-info btn-block">LOGIN</button></a>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-6 p-1">
-									<button type="button" class="btn btn-info btn-block">EN</button>
-								</div>
-								<div class="col-6 p-1">
-									<button type="button" class="btn btn-info btn-block">SR</button>
-								</div>
+<!-- Otvorena pitanja:  navbar 	- da li ostaviti da se otvara po celoj sirini, jer ne znam kako da namestim da se ceo sadrzaj pomeri udesno kad se otvori
+						logo 	- naci sliku i logo sajta 
+-->
+</head>
+<body>
+	<div class="container-fluid">
+	
+		<!--header-->
+		<div class="row header">
+			<div class="col-8 col-md-9 col-lg-10">
+				<a href="index.html"><h1>Budi FIT</h1></a>
+			</div>
+			<div class="col-4 col-md-3 col-lg-2">
+				<form>
+					<div class="container">
+						<div class="row">
+							<div class="col-12 p-1">
+								<a href="login.html"><button type="button" class="btn btn-info btn-block">LOGIN</button></a>
 							</div>
 						</div>
-					</form>
-				</div>
-			</div>
-			<!--Header-->
-			
-			<!--Badges-->
-			<div class="row badges">
-				<div class="col-5" style="text-align:right"><a href="https://rti.etf.bg.ac.rs/rti/si2vd/">Link 1</a></div>
-				<div class="col-2" style="text-align:center"><a href="https://www.etf.bg.ac.rs">Link 2</a></div>
-				<div class="col-5" style="text-align:left"><a href="https://rti.etf.bg.ac.rs/">Link 3</a></div>
-			</div>
-			<!--Badges-->
-			
-			<div class="row p-0 navbar-bg">
-			
-				<!--Navbar-->
-				<div class="col-5 col-md-4 col-lg-3">
-					<nav class="navbar navbar-light light-blue lighten-4 p-0 navbar-7">
-
-						<!-- Navbar brand -->
-						<a class="navbar-brand" href="#">Navigacija</a>
-
-						<!-- Collapse button -->
-						<button class			="navbar-toggler toggler-example" 
-								type			="button" 
-								data-toggle		="collapse" 
-								data-target		="#navbarSupportedContent1"
-								aria-controls	="navbarSupportedContent1" 
-								aria-expanded	="false" 
-								aria-label		="Toggle navigation"
-								id				="navbar">
-							<span class="navbar-toggler-icon">
-								<i class="fas fa-bars fa-1x"></i>
-							</span>
-						</button>
-
-						<!-- Collapsible content -->
-						<div class="collapse navbar-collapse" id="navbarSupportedContent1">
-
-							<!-- Links -->
-							<ul class="navbar-nav mr-auto">
-								<li class="nav-item active">
-									<a class="nav-link" href="">Početna <span class="sr-only">(current)</span></a>
-								</li>
-								<li class="nav-item" onmouseenter="mouseEntered()">
-									<a class="nav-link" href="usluge.html">Usluge</a>
-									
-									<!--Detektuje ulaz / izlaz kursora i otvara podmeni, treba prebaciti u odvojen fajl kasnije-->
-									<script language="JavaScript">
-									
-										document.getElementById("usluge");
-										function mouseEntered() {
-											document.write("BRAVO");
-										}
-										
-									</script>
-									
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="zakazivanje.html">Zakazivanje treninga</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="nalog.html">Moj nalog</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="onama.html">O nama</a>
-								</li>
-							</ul>
-							<!-- Links -->
-
+						<div class="row">
+							<div class="col-6 p-1">
+								<button type="button" class="btn btn-info btn-block">EN</button>
+							</div>
+							<div class="col-6 p-1">
+								<button type="button" class="btn btn-info btn-block">SR</button>
+							</div>
 						</div>
-						<!-- Collapsible content -->
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--Header-->
+		
+		<!--Badges-->
+		<div class="row badges">
+			<div class="col-5" style="text-align:right"><a href="https://rti.etf.bg.ac.rs/rti/si2vd/">Link 1</a></div>
+			<div class="col-2" style="text-align:center"><a href="https://www.etf.bg.ac.rs">Link 2</a></div>
+			<div class="col-5" style="text-align:left"><a href="https://rti.etf.bg.ac.rs/">Link 3</a></div>
+		</div>
+		<!--Badges-->
+		
+		<div class="row p-0 navbar-bg">
+		
+			<!--Navbar-->
+			<div class="col-5 col-md-4 col-lg-3">
+				<nav class="navbar navbar-light light-blue lighten-4 p-0 navbar-7">
 
-					</nav>
-				</div>
-				<!--Navbar-->
+					<!-- Navbar brand -->
+					<a class="navbar-brand" href="#">Navigacija</a>
 
-				<!--Breadcrumbs-->
-				<div class="col-7 col-md-8 col-lg-9">
-					<ul class="breadcrumb">
-						<li>Početna strana</li>
-					</ul>
-				</div>
-				<!--Breadcrumbs-->
-				
+					<!-- Collapse button -->
+					<button class			="navbar-toggler toggler-example" 
+							type			="button" 
+							data-toggle		="collapse" 
+							data-target		="#navbarSupportedContent1"
+							aria-controls	="navbarSupportedContent1" 
+							aria-expanded	="false" 
+							aria-label		="Toggle navigation"
+							id				="navbar">
+						<span class="navbar-toggler-icon">
+							<i class="fas fa-bars fa-1x"></i>
+						</span>
+					</button>
+
+					<!-- Collapsible content -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+						<!-- Links -->
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="">Početna <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item" onmouseenter="mouseEntered()">
+								<a class="nav-link" href="usluge.html">Usluge</a>
+								
+								<!--Detektuje ulaz / izlaz kursora i otvara podmeni, treba prebaciti u odvojen fajl kasnije-->
+								<script language="JavaScript">
+								
+									document.getElementById("usluge");
+									function mouseEntered() {
+										document.write("BRAVO");
+									}
+									
+								</script>
+								
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="zakazivanje.html">Zakazivanje treninga</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="nalog.html">Moj nalog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="onama.html">O nama</a>
+							</li>
+						</ul>
+						<!-- Links -->
+
+					</div>
+					<!-- Collapsible content -->
+
+				</nav>
 			</div>
-					
-			<!--Content-->
-			<div class="row content">
-				<div class="col-12">
-					<img  src="content/slika.jpg">
-				</div>
+			<!--Navbar-->
+
+			<!--Breadcrumbs-->
+			<div class="col-7 col-md-8 col-lg-9">
+				<ul class="breadcrumb">
+					<li>Početna strana</li>
+				</ul>
 			</div>
-			<div class="row content">
-				<div class="col-12">
-					<h3>Zašto bas mi?</h3><br>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique, mi mollis fermentum porta, neque enim iaculis justo, eu congue nunc libero sit amet enim. Mauris at leo et urna dignissim pulvinar. Mauris feugiat, purus id tincidunt porttitor, dolor dui sollicitudin nulla, eget auctor tortor orci vulputate arcu. Fusce id venenatis justo. Quisque non dolor eu sem iaculis viverra vitae et arcu. Maecenas vel iaculis quam. Sed congue est sed urna vestibulum, quis eleifend mi eleifend. Integer vestibulum neque nibh, quis iaculis mi maximus at. In fermentum dapibus lacus, vitae tempus lacus accumsan eget. In aliquam maximus arcu sed laoreet. Cras tempus efficitur ex eu efficitur. Donec volutpat vel mauris in auctor. Aenean cursus, urna ut venenatis semper, risus orci rhoncus felis, et sodales arcu nisi vel tortor. Aenean est sapien, vulputate in erat feugiat, malesuada sagittis ex.
-				</div>
-			</div>
-			<div class="row content">
-				<div class="col-12">
-					<h3>Naši najpopularniji treninzi</h3>
-				</div>
-			</div>
-			<div class="row content">
-				<div class="col-4">
-					<a href="https://www.etf.bg.ac.rs"><img  src="content/slika1.png"></a>
-				</div>
-				<div class="col-4">
-					<a href="https://www.etf.bg.ac.rs"><img  src="content/slika2.jpg"></a>
-				</div>
-				<div class="col-4">
-					<a href="https://www.etf.bg.ac.rs"><img  src="content/slika3.jpg"></a>
-				</div>
-			</div>	
-			<!--Content-->
-			
-			<!--Footer-->
-			<div class="row footer">
-				<div class="col-12">
-					Copyright 2020, Marko Stanojević i Maja Ličina, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
-				</div>
-			</div>
-			<!--Footer-->
+			<!--Breadcrumbs-->
 			
 		</div>
-	</body>
+				
+		<!--Content-->
+		<div class="row content">
+			<div class="col-12">
+				<img  src="content/slika.jpg">
+			</div>
+		</div>
+		<div class="row content">
+			<div class="col-12">
+				<h3>Zašto bas mi?</h3><br>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique, mi mollis fermentum porta, neque enim iaculis justo, eu congue nunc libero sit amet enim. Mauris at leo et urna dignissim pulvinar. Mauris feugiat, purus id tincidunt porttitor, dolor dui sollicitudin nulla, eget auctor tortor orci vulputate arcu. Fusce id venenatis justo. Quisque non dolor eu sem iaculis viverra vitae et arcu. Maecenas vel iaculis quam. Sed congue est sed urna vestibulum, quis eleifend mi eleifend. Integer vestibulum neque nibh, quis iaculis mi maximus at. In fermentum dapibus lacus, vitae tempus lacus accumsan eget. In aliquam maximus arcu sed laoreet. Cras tempus efficitur ex eu efficitur. Donec volutpat vel mauris in auctor. Aenean cursus, urna ut venenatis semper, risus orci rhoncus felis, et sodales arcu nisi vel tortor. Aenean est sapien, vulputate in erat feugiat, malesuada sagittis ex.
+			</div>
+		</div>
+		<div class="row content">
+			<div class="col-12">
+				<h3>Naši najpopularniji treninzi</h3>
+			</div>
+		</div>
+		<div class="row content">
+			<div class="col-4">
+				<a href="https://www.etf.bg.ac.rs"><img  src="content/slika1.png"></a>
+			</div>
+			<div class="col-4">
+				<a href="https://www.etf.bg.ac.rs"><img  src="content/slika2.jpg"></a>
+			</div>
+			<div class="col-4">
+				<a href="https://www.etf.bg.ac.rs"><img  src="content/slika3.jpg"></a>
+			</div>
+		</div>	
+		<!--Content-->
+		
+		<!--Footer-->
+		<div class="row footer">
+			<div class="col-12">
+				Copyright 2020, Marko Stanojević i Maja Ličina, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
+			</div>
+		</div>
+		<!--Footer-->
+		
+	</div>
+</body>
 </html>
