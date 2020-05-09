@@ -19,6 +19,7 @@ p {
 
 #sidebar {
   position: fixed;
+  margin-left: -250px;
   top: 50px;
   width: 250px;
   height: 100%;
@@ -26,7 +27,7 @@ p {
 }
 
 #sidebar.active {
-  margin-left: -250px;
+  margin-left: 0px;
 }
 
 #sidebar-dismiss {
