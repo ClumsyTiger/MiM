@@ -1,0 +1,233 @@
+html, body {
+  height: 100%;
+}
+
+p {
+  text-align: justify;
+}
+
+/* colours */
+:root {
+	--body-color: #fafafa;
+	--p-color: #999999;
+
+	--badges-color: #c89666;
+	
+	--navbar-color: #e1b382;
+  
+	--sidebar-color: #e1b382;
+	--sidebar-header-color: #e1b382;
+	--sidebar-accent-color: #e1b382;
+	--sidebar-text-color: #ffffff;
+
+	--footer-color: #2d545e;
+}
+
+.header {
+	background-color: var(--footer-color);
+	color: var(--sidebar-text-color);
+	text-align:left;
+	background-image:url("assets/banner.jpg");
+	background-size:100%;
+	height:100px;
+}
+
+.header a {
+	color:white;
+}
+
+.header a:hover {
+	color:white;
+	text-decoration: none;
+}
+
+.badges {
+	font-weight:bold;
+	font-size:14pt;
+	background-color: var(--badges-color);
+	height: 30px;
+}
+
+.footer {
+	background-color: var(--footer-color);
+	color: var(--sidebar-text-color);
+	text-align:center;
+	font-size:10pt;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+/*iz templejta-------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------*/
+/* structure */
+
+#navbar {
+  	position: fixed;
+  	top: 0px;
+  	width: 100%;
+  	z-index: 1000;
+}
+
+#sidebar {
+  	position: fixed;
+  	top: 130px;
+  	width: 250px;
+  	height: 100%;
+  	z-index: 1000;
+  	background-color: var(--sidebar-color);
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+#sidebar a {
+  display: block;
+}
+#sidebar a[data-toggle="collapse"] {
+  position: relative;
+}
+
+
+#content {
+  flex: 1 0 auto;
+  margin-top: 5rem;
+}
+
+
+#footer {
+  flex-shrink: none;
+  text-align: center;
+}
+
+
+
+/* style */
+body {
+  font-family: sans-serif;
+  background: var(--body-color);
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: var(--p-color);
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+#navbar {
+  background-color: var(--navbar-color);
+}
+
+#navbar img {
+  height: 100px;
+}
+
+
+.breadcrumb, .breadcrumb-item {
+  white-space: nowrap;
+}
+.breadcrumb .breadcrumb-item {
+  float: none;
+}
+.breadcrumb {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#breadcrumb li {
+	display: inline;
+}
+
+#breadcrumb {
+	height:30px;
+}
+
+
+#sidebar {
+  background: var(--sidebar-color);
+  color: var(--sidebar-text-color);
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: var(--sidebar-header-color);
+}
+
+#sidebar-dismiss {
+  line-height: 35px;
+  cursor: pointer;
+  background: var(--sidebar-color);
+}
+#sidebar-dismiss:hover {
+  background: var(--sidebar-text-color);
+  color: var(--sidebar-color);
+}
+
+#sidebar ul p {
+  padding: 10px;
+  color: var(--sidebar-text-color);
+}
+
+#sidebar ul.components {
+  padding: 20px 0px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+}
+#sidebar ul li a:hover {
+  background: var(--sidebar-text-color);
+  color: var(--sidebar-color);
+}
+
+#sidebar ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: var(--sidebar-accent-color);
+}
+
+
+
+/* animations */
+#sidebar,
+#sidebar-dismiss,
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+  -webkit-transition: all 0.3s; /* Safari */
+  -o-transition: all 0.3s; /* Opera */
+  transition: all 0.3s; /* Firefox, Chrome, ... */
+}
+
+
+
+/* utilities */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+
+
