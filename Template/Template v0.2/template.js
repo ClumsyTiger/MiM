@@ -4,5 +4,9 @@ $(document).ready(function () {
     $("#sidebar-collapse, #sidebar-dismiss").on('click', function () {
         $("#sidebar").toggleClass("active");
     });
+
+    let width = $(document).width();
+    if( width >= 768 )
+        $("#sidebar").addClass("active");
 });
 
