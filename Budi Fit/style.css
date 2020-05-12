@@ -1,14 +1,33 @@
-.header {
-	background-color:#2d545e;
-	color:white;
-	text-align:left;
-	padding:20px;
-	background-image:url("content/banner.jpg");
-	background-size:100%;
+
+p {
+  text-align: justify;
 }
 
-.header form {
-	margin-bottom:0;
+/* colours */
+:root {
+	--body-color: #fafafa;
+	--p-color: #555555;
+
+	--badges-color: #c89666;
+	
+	--navbar-color: #e1b382;
+  
+	--sidebar-color: #e1b382;
+	--sidebar-header-color: #e1b382;
+	--sidebar-accent-color: #e1b382;
+	--sidebar-text-color: #ffffff;
+
+	--footer-color: #2d545e;
+}
+
+.header {
+	background-color: var(--footer-color);
+	color: var(--sidebar-text-color);
+	text-align:left;
+	background-image:url("assets/banner.jpg");
+	background-size:100%;
+  height:100px;
+  align-items: center;
 }
 
 .header a {
@@ -21,145 +40,234 @@
 }
 
 .badges {
-	padding:5px;
-	font-weight:bold;
-	font-size:14pt;
-	background-color:#c89666;
+	background-color: var(--badges-color);
+	height: 40px;
+    text-align:center;
 }
 
-.badges a:link {
-	color:#1C434D;
+.badges li {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    font-size:20pt;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
-.badges a:visited {
-	color:#3E656F;
+.footer {
+	background-color: var(--footer-color);
+	color: var(--sidebar-text-color);
+	text-align:center;
+	font-size:10pt;
+	padding-top:5px;
+  padding-bottom:5px;
 }
 
-.badges a:hover {
-	color:#2d545e;
+#navbar {
+  	position: fixed;
+  	top: 0px;
+  	width: 100%;
+  	z-index: 1000;
 }
 
-.badges a:active {
-	color:#4F767F;
+#sidebar {
+  	position: fixed;
+  	top: 140px;
+  	width: 250px;
+  	height: 100%;
+  	z-index: 1000;
+  	background-color: var(--sidebar-color);
 }
 
-.navbar-bg {
-	background-color:#e1b382;
-	padding:10px;
-	padding-right:0px;
+#sidebar.active {
+  margin-left: -250px;
 }
 
-.navbar-bg button {
-	border: none !important;
-	text-align:right;
+#sidebar-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+#sidebar a {
+  display: block;
+}
+#sidebar a[data-toggle="collapse"] {
+  position: relative;
 }
 
 .content {
 	margin-top:15px;
 	margin-bottom:15px;
-	padding:20px;
+	padding:0px;
 	text-align:justify;
+  color: var(--p-color);
 }
 
 .content img {
-	width:100%;
-	margin-left: auto;
-	margin-right: auto;
+  width:100%;
+  vertical-align: middle;
+  padding-top: 15px;
 }
 
-.content h3 {
-	text-align:center;
+.content h3,h4{
+  text-align: center;
 }
 
-.footer {
-	background-color:#2d545e;
-	color:white;
-	text-align:center;
-	font-size:10pt;
-	padding-top:5px;
-	padding-bottom:5px;
+.linija {
+  border-top: 3px dotted lightgray;
 }
 
-.fa-1x {
-	font-size: 1.5rem;
+#content {
+  flex: 1 0 auto;
+  margin-top:30px;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
 }
-.navbar-toggler.toggler-example {
-	cursor: pointer;
+
+/* style */
+body {
+  font-family: sans-serif;
+  background: var(--body-color);
+  margin-top:140px;
+  /*width:98.85%;*/
 }
-.dark-blue-text {
-	color: #0A38F5;
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: var(--p-color);
 }
-.dark-pink-text {
-	color: #AC003A;
-}
-.dark-amber-text {
-	color: #ff6f00;
-}
-.dark-teal-text {
-	color: #004d40;
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
 }
 
 
-/* Style the list */
-ul.breadcrumb {
-	margin:0px;
-	padding:8px;
-	list-style: none;
-	background-color:#e1b382;
+#navbar {
+  background-color: var(--navbar-color);
 }
 
-/* Display list items side by side */
-ul.breadcrumb li {
+#navbar img {
+  height: 100px;
+}
+
+
+.breadcrumb, .breadcrumb-item {
+  white-space: nowrap;
+}
+.breadcrumb .breadcrumb-item {
+  float: none;
+}
+.breadcrumb {
+  height:30px!important;
+  justify-content: center;
+}
+
+#breadcrumb li {
 	display: inline;
-	font-size: 16px;
 }
 
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-	padding: 8px;
-	color: black;
-	content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-	color: #0275d8;
-	text-decoration: none;
-}
-
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-	color: #01447e;
-	text-decoration: underline;
+#breadcrumb {
+	height:30px;
 }
 
 
-.navbar.navbar-7 .navbar-toggler-icon {
-	background-image: url('https://mdbootstrap.com/img/svg/hamburger9.svg?color=2D545E');
+#sidebar {
+  background: var(--sidebar-color);
+  color: var(--sidebar-text-color);
 }
 
-.login {
-	background-color:WhiteSmoke;
-	text-align:center;
-	border:dotted;
-	border-width:3px;
-	border-color:mediumturquoise;
-	max-width:70% !important;
-	padding-top:20px;
-	padding-bottom:20px;
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: var(--sidebar-header-color);
 }
 
-.login input {
-	width:70%;
+#sidebar-dismiss {
+  line-height: 35px;
+  cursor: pointer;
+  background: var(--sidebar-color);
+}
+#sidebar-dismiss:hover {
+  background: var(--sidebar-text-color);
+  color: var(--sidebar-color);
 }
 
-.wrapper-1 {
-	padding-top:10%;
-	min-height:80%;
+#sidebar ul p {
+  padding: 10px;
+  color: var(--sidebar-text-color);
 }
 
-.wrapper-2 {
-	padding-top:10%;
-	min-height:71%;
+#sidebar ul.components {
+  padding: 20px 0px;
 }
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+}
+#sidebar ul li a:hover {
+  background: var(--sidebar-text-color);
+  color: var(--sidebar-color);
+}
+
+#sidebar ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: var(--sidebar-accent-color);
+}
+
+
+
+/* animations */
+#sidebar,
+#sidebar-dismiss,
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+  -webkit-transition: all 0.3s; /* Safari */
+  -o-transition: all 0.3s; /* Opera */
+  transition: all 0.3s; /* Firefox, Chrome, ... */
+}
+
+
+
+/* utilities */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+.prikazi {
+  font-size:15pt!important;
+  width:100%;
+  text-align: center;
+  display: block;
+  justify-content: space-between;
+}
+
+.prikazi button {
+  color: var(--p-color);
+  width:100%;
+}
+
+.form-coltrol, .form-control:focus{
+  color: var(--p-color)!important;
+  box-shadow: 0 0 0 0.0rem white!important;
+}
+
+
+
 

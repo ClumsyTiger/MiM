@@ -1,171 +1,170 @@
+<!DOCTYPE html>
 <html>
+
+
+<!-- head -->
 <head>
-	<title>Budi FIT - Pocetna strana</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<!--script language="JavaScript" src="javascript.js"-->
-	<meta charset="UTF-8">
-	
-<!-- Namena ovog fajla, kao i fajla style.css je da se definise sablon koji ce biti koriscen kroz izradu projekta radi konzistentnosti,
-	tako da bi bilo pozeljno prvo utvrditi sve stilske odluke pre zapocinjanja procesa implementacije -->
-		
-<!-- Otvorena pitanja:  navbar 	- da li ostaviti da se otvara po celoj sirini, jer ne znam kako da namestim da se ceo sadrzaj pomeri udesno kad se otvori
-						logo 	- naci sliku i logo sajta 
--->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budi fit</title>
+
+    <!-- Bootstrap, jQuery, Popper, Bootstrap js -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Font Awesome icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- javascript -->
+    <script src="script.js"></script>
 </head>
-<body>
-	<div class="container-fluid">
-	
-		<!--header-->
-		<div class="row header">
-			<div class="col-8 col-md-9 col-lg-10">
-				<a href="index.html"><h1>Budi FIT</h1></a>
-			</div>
-			<div class="col-4 col-md-3 col-lg-2">
-				<form>
-					<div class="container">
-						<div class="row">
-							<div class="col-12 p-1">
-								<a href="login.html"><button type="button" class="btn btn-info btn-block">LOGIN</button></a>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-6 p-1">
-								<button type="button" class="btn btn-info btn-block">EN</button>
-							</div>
-							<div class="col-6 p-1">
-								<button type="button" class="btn btn-info btn-block">SR</button>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-		<!--Header-->
-		
-		<!--Badges-->
+
+
+<!-- body -->
+<body class="d-flex flex-column">
+
+    <!-- navbar -->
+    <div id="navbar" class="nav navbar-nav">
+        <!-- header -->
+        <div class="row header">
+            <div class="col-8 col-md-9 col-lg-10">
+                <a href="index.html" style="font-size: xxx-large;"><b>Budi FIT</b></a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2">
+                <form>
+                    <div class="container pt-2">
+                        <div class="row pr-2">
+                            <div class="col-6 p-1">
+                                <button type="button" class="btn btn-info btn-block">EN</button>
+                            </div>
+                            <div class="col-6 p-1">
+                                <button type="button" class="btn btn-info btn-block">SR</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- badges -->
 		<div class="row badges">
-			<div class="col-5" style="text-align:right"><a href="https://rti.etf.bg.ac.rs/rti/si2vd/">Link 1</a></div>
-			<div class="col-2" style="text-align:center"><a href="https://www.etf.bg.ac.rs">Link 2</a></div>
-			<div class="col-5" style="text-align:left"><a href="https://rti.etf.bg.ac.rs/">Link 3</a></div>
-		</div>
-		<!--Badges-->
-		
-		<div class="row p-0 navbar-bg">
-		
-			<!--Navbar-->
-			<div class="col-5 col-md-4 col-lg-3">
-				<nav class="navbar navbar-light light-blue lighten-4 p-0 navbar-7">
-
-					<!-- Navbar brand -->
-					<a class="navbar-brand" href="#">Navigacija</a>
-
-					<!-- Collapse button -->
-					<button class			="navbar-toggler toggler-example" 
-							type			="button" 
-							data-toggle		="collapse" 
-							data-target		="#navbarSupportedContent1"
-							aria-controls	="navbarSupportedContent1" 
-							aria-expanded	="false" 
-							aria-label		="Toggle navigation"
-							id				="navbar">
-						<span class="navbar-toggler-icon">
-							<i class="fas fa-bars fa-1x"></i>
-						</span>
-					</button>
-
-					<!-- Collapsible content -->
-					<div class="collapse navbar-collapse" id="navbarSupportedContent1">
-
-						<!-- Links -->
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="">Početna <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item" onmouseenter="mouseEntered()">
-								<a class="nav-link" href="usluge.html">Usluge</a>
-								
-								<!--Detektuje ulaz / izlaz kursora i otvara podmeni, treba prebaciti u odvojen fajl kasnije-->
-								<script language="JavaScript">
-								
-									document.getElementById("usluge");
-									function mouseEntered() {
-										document.write("BRAVO");
-									}
-									
-								</script>
-								
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="zakazivanje.html">Zakazivanje treninga</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="nalog.html">Moj nalog</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="onama.html">O nama</a>
-							</li>
-						</ul>
-						<!-- Links -->
-
-					</div>
-					<!-- Collapsible content -->
-
-				</nav>
-			</div>
-			<!--Navbar-->
-
-			<!--Breadcrumbs-->
-			<div class="col-7 col-md-8 col-lg-9">
-				<ul class="breadcrumb">
-					<li>Početna strana</li>
+			<div class="col-12">
+				<ul class='pl-0'>
+					<li>
+						<a href='https://www.instagram.com/'><i class="fab fa-instagram" style="color:#fafafa;"></i></a>
+					</li>
+					<li>
+						<a href='https://www.facebook.com/'><i class="fab fa-facebook-square" style="color:#fafafa;"></i></a>
+					</li>
+					<li>
+						<a href='https://twitter.com/'><i class="fab fa-twitter" style="color:#fafafa;"></i></a>
+					</li>
+					<li>
+						<a href='https://www.youtube.com/'><i class="fab fa-youtube" style="color:#fafafa;"></i></a>
+					</li>
 				</ul>
 			</div>
-			<!--Breadcrumbs-->
-			
 		</div>
-				
-		<!--Content-->
-		<div class="row content">
-			<div class="col-12">
-				<img  src="content/slika.jpg">
+
+        <div class='row'>
+			<!-- breadcrumb -->
+            <div class="col-12" id='breadcrumb'>
+                <ul class="pt-1">
+                    <li id="sidebar-collapse" class="breadcrumb-item px-2 py-0">
+                        <i class="fas fa-align-justify fa-lg" style="color:#fafafa;"></i>
+                    </li>
+                    <!-- place class .active on the currently active link -->
+                    <li class="breadcrumb-item active"><a href="#">Početna</a></li>
+                    <!-- ... -->
+                </ol>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- sidebar  -->
+    <div id="sidebar" class='active'>
+        <div id="sidebar-dismiss"><i class="fas fa-arrow-left"></i></div>
+
+        <div class="sidebar-header">
+            <h3>Navigacija</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li><a href="index.html">Početna</a></li>
+            <li>
+                <a href="#usluge-submenu" data-toggle="collapse" class="dropdown-toggle">Usluge</a>
+                <ul class="collapse list-unstyled" id="usluge-submenu">
+                    <li><a href="treninzi.html">Treninzi</a></li>
+                    <li><a href="nutricionista.html">Nutricionista</a></li>
+                    <li><a href="masaze.html">Masaže</a></li>
+                </ul>
+            </li>
+            <li><a href="zakazivanje.html">Zakazivanje treninga</a></li>
+            <li><a href="nalog.html">Moj nalog</a></li>
+            <li><a href="onama.html">O nama</a></li>
+        </ul>
+        
+    </div>
+
+    <!-- page content  ------------------------------------------------------------------------------------------------------------->
+    <div id="content" class="container-fluid">
+        <div class='row content m-0 pt-3 pb-3'>
+			<div class="offset-1 col-10 p-0">
+				<img  src="assets/slika.jpg">
 			</div>
 		</div>
-		<div class="row content">
-			<div class="col-12">
+		<div class='row content m-0 pt-3 pb-3'>
+			<div class="offset-1 col-10 p-0">
 				<h3>Zašto bas mi?</h3><br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique, mi mollis fermentum porta, neque enim iaculis justo, eu congue nunc libero sit amet enim. Mauris at leo et urna dignissim pulvinar. Mauris feugiat, purus id tincidunt porttitor, dolor dui sollicitudin nulla, eget auctor tortor orci vulputate arcu. Fusce id venenatis justo. Quisque non dolor eu sem iaculis viverra vitae et arcu. Maecenas vel iaculis quam. Sed congue est sed urna vestibulum, quis eleifend mi eleifend. Integer vestibulum neque nibh, quis iaculis mi maximus at. In fermentum dapibus lacus, vitae tempus lacus accumsan eget. In aliquam maximus arcu sed laoreet. Cras tempus efficitur ex eu efficitur. Donec volutpat vel mauris in auctor. Aenean cursus, urna ut venenatis semper, risus orci rhoncus felis, et sodales arcu nisi vel tortor. Aenean est sapien, vulputate in erat feugiat, malesuada sagittis ex.
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique, mi mollis fermentum porta, neque enim iaculis justo, eu congue nunc libero sit amet enim. Mauris at leo et urna dignissim pulvinar. Mauris feugiat, purus id tincidunt porttitor, dolor dui sollicitudin nulla, eget auctor tortor orci vulputate arcu. Fusce id venenatis justo. Quisque non dolor eu sem iaculis viverra vitae et arcu. Maecenas vel iaculis quam. Sed congue est sed urna vestibulum, quis eleifend mi eleifend. Integer vestibulum neque nibh, quis iaculis mi maximus at. In fermentum dapibus lacus, vitae tempus lacus accumsan eget. In aliquam maximus arcu sed laoreet. Cras tempus efficitur ex eu efficitur. Donec volutpat vel mauris in auctor. Aenean cursus, urna ut venenatis semper, risus orci rhoncus felis, et sodales arcu nisi vel tortor. Aenean est sapien, vulputate in erat feugiat, malesuada sagittis ex.
+				</p>
 			</div>
 		</div>
-		<div class="row content">
-			<div class="col-12">
+		<div class='row content m-0 pt-3 pb-3'>
+			<div class="offset-1 col-10 p-0">
+				<hr class='linija'><br>
 				<h3>Naši najpopularniji treninzi</h3>
 			</div>
 		</div>
-		<div class="row content">
-			<div class="col-4">
-				<a href="https://www.etf.bg.ac.rs"><img  src="content/slika1.png"></a>
-			</div>
-			<div class="col-4">
-				<a href="https://www.etf.bg.ac.rs"><img  src="content/slika2.jpg"></a>
-			</div>
-			<div class="col-4">
-				<a href="https://www.etf.bg.ac.rs"><img  src="content/slika3.jpg"></a>
-			</div>
-		</div>	
-		<!--Content-->
-		
-		<!--Footer-->
-		<div class="row footer">
-			<div class="col-12">
-				Copyright 2020, Marko Stanojević i Maja Ličina, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
+		<div class='row content m-0 pt-3 pb-3'>
+			<div class="offset-1 col-10 p-0">
+				<div class="row">
+					<div class="col-12 col-lg-4 pb-4">
+						<h4>Pilates</h4>
+						<hr>
+						<a href="https://www.etf.bg.ac.rs"><img  src="assets/slika1.png"></a>
+					</div>
+					<div class="col-12 col-lg-4 pb-4">
+						<h4>Joga</h4>
+						<hr>
+						<a href="https://www.etf.bg.ac.rs"><img  src="assets/slika2.jpg"></a>
+					</div>
+					<div class="col-12 col-lg-4 pb-4">
+						<h4>Core</h4>
+						<hr>
+						<a href="https://www.etf.bg.ac.rs"><img  src="assets/slika3.jpg"></a>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!--Footer-->
-		
 	</div>
+
+    <!-- footer ----------------------------------------------------------------------------------------------------------------------->
+	<div class="footer">
+		Copyright 2020, Marko Stanojević i Maja Ličina, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
+	</div>
+    
 </body>
+
+
 </html>
