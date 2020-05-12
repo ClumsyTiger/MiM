@@ -1,9 +1,4 @@
-
-p {
-  text-align: justify;
-}
-
-/* colours */
+/* colours ----------------------------------------------------------*/
 :root {
 	--body-color: #fafafa;
 	--p-color: #555555;
@@ -20,6 +15,30 @@ p {
 	--footer-color: #2d545e;
 }
 
+/* opste ------------------------------------------------------------*/
+body {
+  font-family: sans-serif;
+  background: var(--body-color);
+  margin-top:140px;
+  /*width:98.85%;*/
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: justify;
+  color: var(--p-color);
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* deo zaglavlja sa logo-om ----------------------------------------------*/
 .header {
 	background-color: var(--footer-color);
 	color: var(--sidebar-text-color);
@@ -39,6 +58,7 @@ p {
 	text-decoration: none;
 }
 
+/* baneri ispod headera ------------------------------------------------------*/
 .badges {
 	background-color: var(--badges-color);
 	height: 40px;
@@ -56,6 +76,7 @@ p {
     align-items: center;
 }
 
+/* footer ------------------------------------------------------------------------*/
 .footer {
 	background-color: var(--footer-color);
 	color: var(--sidebar-text-color);
@@ -65,102 +86,20 @@ p {
   padding-bottom:5px;
 }
 
+/* navigacija -------------------------------------------------------------------*/
 #navbar {
   	position: fixed;
   	top: 0px;
   	width: 100%;
-  	z-index: 1000;
-}
-
-#sidebar {
-  	position: fixed;
-  	top: 140px;
-  	width: 250px;
-  	height: 100%;
-  	z-index: 1000;
-  	background-color: var(--sidebar-color);
-}
-
-#sidebar.active {
-  margin-left: -250px;
-}
-
-#sidebar-dismiss {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-}
-
-#sidebar a {
-  display: block;
-}
-#sidebar a[data-toggle="collapse"] {
-  position: relative;
-}
-
-.content {
-	margin-top:15px;
-	margin-bottom:15px;
-	padding:0px;
-	text-align:justify;
-  color: var(--p-color);
-}
-
-.content img {
-  width:100%;
-  vertical-align: middle;
-  padding-top: 15px;
-}
-
-.content h1,h3,h4,h5{
-  text-align: center;
-}
-
-.linija {
-  border-top: 3px dotted lightgray;
-}
-
-#content {
-  flex: 1 0 auto;
-  margin-top:30px;
-  min-height: calc(100vh - 200px);
-  justify-content: center;
-}
-
-/* style */
-body {
-  font-family: sans-serif;
-  background: var(--body-color);
-  margin-top:140px;
-  /*width:98.85%;*/
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-  color: var(--p-color);
-}
-
-a,
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-#navbar {
-  background-color: var(--navbar-color);
+    z-index: 1000;
+    background-color: var(--navbar-color);
 }
 
 #navbar img {
   height: 100px;
 }
 
-
+/* breadcrumbs----------------------------------------------------------------------*/
 .breadcrumb, .breadcrumb-item {
   white-space: nowrap;
 }
@@ -180,25 +119,51 @@ a:focus {
 	height:30px;
 }
 
-
+/* iskacuci meni -----------------------------------------------------------*/
 #sidebar {
-  background: var(--sidebar-color);
-  color: var(--sidebar-text-color);
+  	position: fixed;
+  	top: 140px;
+  	width: 250px;
+  	height: 100%;
+  	z-index: 1000;
+    background-color: var(--sidebar-color);
+    background: var(--sidebar-color);
+    color: var(--sidebar-text-color);
 }
 
+/* za sakrivanje iskacuceg menija*/
+#sidebar.active {
+  margin-left: -250px;
+}
+
+/* polje koje zatvara otvoren meni*/
 #sidebar .sidebar-header {
   padding: 20px;
   background: var(--sidebar-header-color);
 }
 
 #sidebar-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
   line-height: 35px;
   cursor: pointer;
   background: var(--sidebar-color);
 }
+
 #sidebar-dismiss:hover {
   background: var(--sidebar-text-color);
   color: var(--sidebar-color);
+}
+
+#sidebar a {
+  display: block;
+}
+#sidebar a[data-toggle="collapse"] {
+  position: relative;
 }
 
 #sidebar ul p {
@@ -225,8 +190,6 @@ a:focus {
   background: var(--sidebar-accent-color);
 }
 
-
-
 /* animations */
 #sidebar,
 #sidebar-dismiss,
@@ -238,8 +201,6 @@ a:focus {
   transition: all 0.3s; /* Firefox, Chrome, ... */
 }
 
-
-
 /* utilities */
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -250,6 +211,47 @@ a:focus {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
 
+
+
+/* content --------------------------------------------------------------------------------*/
+/* odnosi se na celokupan prostor koji se razlikuje od stranice do stranice*/
+#content {
+  flex: 1 0 auto;
+  margin-top:30px;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
+}
+
+/* tackasta linija koja je na nekim stranicama koriscena kao divider*/
+.linija {
+  border-top: 3px dotted lightgray;
+}
+
+/* pojedinacni delovi sadrzaja stranice */
+.content {
+	margin-top:15px;
+	margin-bottom:15px;
+	padding:0px;
+	text-align:justify;
+  color: var(--p-color);
+}
+
+.content img {
+  width:100%;
+  vertical-align: middle;
+  padding-top: 15px;
+}
+
+.content h1,h3,h4,h5{
+  text-align: center;
+}
+
+
+/* stilizacija iznad se odnosila na elemente koji se pojavljuju na svim stranicama, dok je stilizacija ispod specificna */
+
+
+
+/* deo koji se sakriva na stranicama treninzi, i svim pojedinacnim stranicama treninga*/
 .prikazi {
   font-size:15pt!important;
   width:100%;
@@ -263,11 +265,13 @@ a:focus {
   width:100%;
 }
 
+/* bootstrapova klasa za elemente forme, iskljucuje onaj glow okolo kada je element u fokusu*/
 .form-coltrol, .form-control:focus{
   color: var(--p-color)!important;
   box-shadow: 0 0 0 0.0rem white!important;
 }
 
+/* galerija na stranicama pojedinacnih treninga */
 .galerija {
   background-color: white;
   height:330px;
@@ -279,6 +283,7 @@ a:focus {
   align-self: left!important;
 }
 
+/* klasa omogucava da se sadrzaj galerije skroluje*/
 .scrollable {
   padding:15px;
   padding-left:0px;
@@ -292,6 +297,7 @@ a:focus {
   padding-right: 15px;
 }
 
+/* custom scrolbar traka u galeriji------------------------------------------------------*/
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
@@ -312,6 +318,7 @@ a:focus {
   background: rgba(240, 240, 240, 0.5);
 }
 
+/* odnosi se na forme za ocenjivanje i komentarisanje na stranicama pojedinacnih treninga i na njihove elemente*/
 #ocena, #komentar {
   text-align: center;
 }
