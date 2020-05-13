@@ -57,5 +57,24 @@ $(document).ready(function () {
         }
     }
 
+    // ---- kod vezan za sortiranje treninga ----------------------------------------------------------------------------------------
+    // sortiranje po imenu
+    $('.sortiranje').on('change', function() {
+        if($(this).attr('id') == 'sortiranje-yoga') {
+            if($(this).children('option:selected').val()=='poimenu') {
+                $('#ashtanga-yoga').insertBefore('#power-yoga');
+                $('#vinyasa-yoga').insertAfter('#power-yoga');
+            }
+            if($(this).children('option:selected').val()=='potrajanju') {
+                $('#ashtanga-yoga').insertAfter('#power-yoga');
+                $('#vinyasa-yoga').insertAfter('#power-yoga');
+            }
+            if($(this).children('option:selected').val()=='potezini') {
+               $('#vinyasa-yoga').insertBefore('#power-yoga');
+               $('#ashtanga-yoga').insertBefore('#power-yoga');
+            }
+        }
+    })
+
 });
 

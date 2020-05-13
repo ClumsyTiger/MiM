@@ -134,23 +134,23 @@
                         <button data-toggle="collapse" href='#collapse-1' class='btn btn-light prikazi'>Prikaži još</button>
                         <div id="collapse-1" class="mt-2 ml-0 prikazi collapse">
                             <div class="row pl-3 pr-3">
-                                <div class="col-12 col-md-4 prikazi p-0">
+                                <div class="col-12 col-md-4 prikazi p-0" id='power-yoga'>
                                     <a href='power-yoga.html'><button class='btn btn-outline-info'>Power Yoga</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Vinyasa Yoga</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='vinyasa-yoga'>
+                                    <a href='vinyasa-yoga.html'><button class='btn btn-outline-info'>Vinyasa Yoga</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Ashtanga Yoga</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='ashtanga-yoga'>
+                                    <a href='ashtanga-yoga.html'><button class='btn btn-outline-info'>Ashtanga Yoga</button></a>
                                 </div>
                             </div>
                             <div class="row pt-2">
                                 <div class='col-12'>
-                                    <select class='form-control border-info'>
+                                    <select class='form-control border-info sortiranje' id='sortiranje-yoga'>
                                         <option disabled selected hidden>Sortitaj po:</option>
-                                        <option>Imenu</option>
-                                        <option>Trajanju</option>
-                                        <option>Tezini</option>
+                                        <option value='poimenu'>Imenu</option>
+                                        <option value='potrajanju'>Trajanju</option>
+                                        <option value='potezini'>Težini</option>
                                     </select>
                                 </div>
                             </div>
