@@ -58,8 +58,8 @@ $(document).ready(function () {
     }
 
     // ---- kod vezan za sortiranje treninga ----------------------------------------------------------------------------------------
-    // sortiranje po imenu
     $('.sortiranje').on('change', function() {
+        // sortiranje yoge
         if($(this).attr('id') == 'sortiranje-yoga') {
             if($(this).children('option:selected').val()=='poimenu') {
                 $('#ashtanga-yoga').insertBefore('#power-yoga');
@@ -72,6 +72,21 @@ $(document).ready(function () {
             if($(this).children('option:selected').val()=='potezini') {
                $('#vinyasa-yoga').insertBefore('#power-yoga');
                $('#ashtanga-yoga').insertBefore('#power-yoga');
+            }
+        }
+        // sortiranje pilatesa
+        if($(this).attr('id') == 'sortiranje-pilates') {
+            if($(this).children('option:selected').val()=='poimenu') {
+                $('#stot-pilates').insertAfter('#klasicni-pilates');
+                $('#reformer-pilates').insertAfter('#klasicni-pilates');
+            }
+            if($(this).children('option:selected').val()=='potrajanju') {
+                $('#reformer-pilates').insertBefore('#klasicni-pilates');
+                $('#stot-pilates').insertAfter('#klasicni-pilates');
+            }
+            if($(this).children('option:selected').val()=='potezini') {
+               $('#stot-pilates').insertBefore('#klasicni-pilates');
+               $('#reformer-pilates').insertAfter('#klasicni-pilates');
             }
         }
     })

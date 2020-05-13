@@ -177,23 +177,23 @@
                         <button data-toggle="collapse" href='#collapse-2' class='btn btn-light prikazi'>Prikaži još</button>
                         <div id="collapse-2" class="mt-2 ml-0 prikazi collapse">
                             <div class="row pl-3 pr-3">
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Klasični Pilates</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='klasicni-pilates'>
+                                    <a href='klasicni-pilates.html'><button class='btn btn-outline-info'>Klasični Pilates</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Reformer Pilates</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='reformer-pilates'>
+                                    <a href='reformer-pilates.html'><button class='btn btn-outline-info'>Reformer Pilates</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Stot Pilates</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='stot-pilates'>
+                                    <a href='stot-pilates.html'><button class='btn btn-outline-info'>Stot Pilates</button></a>
                                 </div>
                             </div>
                             <div class="row pt-2">
                                 <div class='col-12'>
-                                    <select class='form-control border-info'>
+                                    <select class='form-control border-info sortiranje' id='sortiranje-pilates'>
                                         <option disabled selected hidden>Sortitaj po:</option>
-                                        <option>Imenu</option>
-                                        <option>Trajanju</option>
-                                        <option>Tezini</option>
+                                        <option value='poimenu'>Imenu</option>
+                                        <option value='potrajanju'>Trajanju</option>
+                                        <option value='potezini'>Težini</option>
                                     </select>
                                 </div>
                             </div>
