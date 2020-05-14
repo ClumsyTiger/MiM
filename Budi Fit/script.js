@@ -89,6 +89,36 @@ $(document).ready(function () {
                $('#reformer-pilates').insertAfter('#klasicni-pilates');
             }
         }
+        // sortiranje core
+        if($(this).attr('id') == 'sortiranje-core') {
+            if($(this).children('option:selected').val()=='poimenu') {
+                $('#barre').insertBefore('#core-yoga');
+                $('#core').insertBefore('#core-yoga');
+            }
+            if($(this).children('option:selected').val()=='potrajanju') {
+                $('#core').insertBefore('#core-yoga');
+                $('#barre').insertAfter('#core-yoga');
+            }
+            if($(this).children('option:selected').val()=='potezini') {
+                $('#core').insertBefore('#core-yoga');
+                $('#barre').insertAfter('#core-yoga');
+            }
+        }
+        // sortiranje cardio
+        if($(this).attr('id') == 'sortiranje-cardio') {
+            if($(this).children('option:selected').val()=='poimenu') {
+                $('#aerobik').insertBefore('#cardio-box');
+                $('#spin').insertAfter('#cardio-box');
+            }
+            if($(this).children('option:selected').val()=='potrajanju') {
+                $('#aerobik').insertAfter('#cardio-box');
+                $('#spin').insertBefore('#cardio-box');
+            }
+            if($(this).children('option:selected').val()=='potezini') {
+                $('#aerobik').insertBefore('#cardio-box');
+                $('#spin').insertBefore('#cardio-box');
+            }
+        }
     })
 
 });

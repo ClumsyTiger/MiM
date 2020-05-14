@@ -218,23 +218,23 @@
                         <button data-toggle="collapse" href='#collapse-3' class='btn btn-light prikazi'>Prikaži još</button>
                         <div id="collapse-3" class="mt-2 ml-0 prikazi collapse">
                             <div class="row pl-3 pr-3">
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Core Yoga</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='core-yoga'>
+                                    <a href='core-yoga.html'><button class='btn btn-outline-info'>Core Yoga</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Core</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='core'>
+                                    <a href='core.html'><button class='btn btn-outline-info'>Core</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Barre</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='barre'>
+                                    <a href='barre.html'><button class='btn btn-outline-info'>Barre</button></a>
                                 </div>
                             </div>
                             <div class="row pt-2">
                                 <div class='col-12'>
-                                    <select class='form-control border-info'>
+                                    <select class='form-control border-info sortiranje' id='sortiranje-core'>
                                         <option disabled selected hidden>Sortitaj po:</option>
-                                        <option>Imenu</option>
-                                        <option>Trajanju</option>
-                                        <option>Tezini</option>
+                                        <option value='poimenu'>Imenu</option>
+                                        <option value='potrajanju'>Trajanju</option>
+                                        <option value='potezini'>Težini</option>
                                     </select>
                                 </div>
                             </div>
@@ -259,23 +259,23 @@
                         <button data-toggle="collapse" href='#collapse-4' class='btn btn-light prikazi'>Prikaži još</button>
                         <div id="collapse-4" class="mt-2 ml-0 prikazi collapse">
                             <div class="row pl-3 pr-3">
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Cardio Kickboxing</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='cardio-box'>
+                                    <a href='cardio-box.html'><button class='btn btn-outline-info'>Cardio Box</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Indoor Cycling</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='spin'>
+                                    <a href='spin.html'><button class='btn btn-outline-info'>Spin</button></a>
                                 </div>
-                                <div class="col-12 col-md-4 prikazi p-0">
-                                    <router-link to='/'><button class='btn btn-outline-info'>Aerobic</button></router-link>
+                                <div class="col-12 col-md-4 prikazi p-0" id='aerobik'>
+                                    <a href='aerobik.html'><button class='btn btn-outline-info'>Aerobik</button></a>
                                 </div>
                             </div>
                             <div class="row pt-2">
                                 <div class='col-12'>
-                                    <select class='form-control btn-outline-info'>
+                                    <select class='form-control border-info sortiranje' id='sortiranje-cardio'>
                                         <option disabled selected hidden>Sortitaj po:</option>
-                                        <option>Imenu</option>
-                                        <option>Trajanju</option>
-                                        <option>Tezini</option>
+                                        <option value='poimenu'>Imenu</option>
+                                        <option value='potrajanju'>Trajanju</option>
+                                        <option value='potezini'>Težini</option>
                                     </select>
                                 </div>
                             </div>
