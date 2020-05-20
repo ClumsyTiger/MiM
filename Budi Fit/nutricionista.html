@@ -115,48 +115,56 @@
 			<div class="col-12 offset-md-1 col-md-10 p-0">
                 <br><h1>Nutricionista</h1><br>
                 <hr class='linija'><br>
-                <p>Tekst</p>
+                <p>Text</p>
 			</div>
         </div>
         <div class='row content m-0 pt-3 pb-3'>
             <div class="col-12 offset-md-1 col-md-10 p-0">
-                <br><h3>Zatražite pregled</h3><br>
+                <h3>Zakažite pregled</h3>
+                <br>
 
                 <form id="forma">
+                    <small id="forma-help">&nbsp;</small>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="ime">Ime</label>
                             <input id="ime" type="text" class="form-control" placeholder="ime">
+                            <small id="ime-help">&nbsp;</small>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="prezime">Prezime</label>
                             <input id="prezime" type="text" class="form-control" placeholder="prezime">
+                            <small id="prezime-help">&nbsp;</small>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="datum">Datum</label>
                             <input id="datum" type="date" class="form-control">
+                            <small id="datum-help">&nbsp;</small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="imejl">Email</label>
-                            <input id="imejl" type="text" class="form-control" placeholder="email">
+                            <input id="imejl" type="text" class="form-control" placeholder="email@example.com">
+                            <small id="imejl-help">&nbsp;</small>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="telefon">Broj telefona</label>
-                            <input id="telefon" type="tel" class="form-control" placeholder="broj telefona">
+                            <input id="telefon" type="tel" class="form-control" placeholder="+381012345678">
+                            <small id="telefon-help">&nbsp;</small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="napomena">Napomena</label>
-                            <textarea id="napomena" type="text" class="form-control" placeholder="napomena" rows="6" style="resize: none;"></textarea>
+                            <textarea id="napomena" type="text" class="form-control" spellcheck="false" placeholder="napomena" rows="6" style="resize: none;"></textarea>
+                            <small id="napomena-help">&nbsp;</small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12" style="text-align: right;">
-                            <button type="button" class="btn btn-outline-info" onclick="printJS('forma', 'html');">Preuzmi PDF</button>
-                            <button type="button" class="btn btn-outline-info">Podnesi zahtev</button>
+                            <div type="button" class="btn btn-outline-info" onclick="printJS('forma', 'html');">Preuzmi PDF</div>
+                            <div id="zakazi" type="button" class="btn btn-outline-info">Podnesi zahtev</div>
                         </div>
                     </div>
                 </form>

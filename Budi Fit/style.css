@@ -62,18 +62,18 @@ a:focus {
 .badges {
 	background-color: var(--badges-color);
 	height: 40px;
-    text-align:center;
+  text-align:center;
 }
 
 .badges li {
-    display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    font-size:20pt;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  font-size:20pt;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* footer ------------------------------------------------------------------------*/
@@ -88,11 +88,11 @@ a:focus {
 
 /* navigacija -------------------------------------------------------------------*/
 #navbar {
-  	position: fixed;
-  	top: 0px;
-  	width: 100%;
-    z-index: 1000;
-    background-color: var(--navbar-color);
+	position: fixed;
+	top: 0px;
+	width: 100%;
+  z-index: 1000;
+  background-color: var(--navbar-color);
 }
 
 #navbar img {
@@ -265,12 +265,6 @@ a:focus {
   width:100%;
 }
 
-/* bootstrapova klasa za elemente forme, iskljucuje onaj glow okolo kada je element u fokusu*/
-.form-control, .form-control:focus{
-  color: var(--p-color)!important;
-  box-shadow: 0 0 0 0.0rem white!important;
-}
-
 /* galerija na stranicama pojedinacnih treninga */
 .galerija {
   background-color: white;
@@ -346,6 +340,22 @@ a:focus {
   margin-bottom:15px;
 }
 
+
+/* forme --------------------------------------------------------------------------------*/
+.form-group
+{
+  margin-bottom: 0;
+}
+#forma label
+{
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+#forma small
+{
+  font-size: 10px;
+  color: red;
+}
 
 
 /* ====== utilities ====== */

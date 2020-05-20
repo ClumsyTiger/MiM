@@ -121,5 +121,165 @@ $(document).ready(function () {
         }
     })
 
+
+
+    // ---- forma za zakazivanje nutricioniste i masaze ----------------------------------------------------------------------------------------
+    // ====== constants ======
+    const nbsp = '&nbsp;';
+    
+    
+    // check if the firstname field is valid, if it isn't output help text and change field background color
+    $("#ime").on('input', function() {
+        let firstname = $(this);
+        
+        let validity = 'false';   // 'false' is false, '' is valid
+        let tip      = nbsp;      // non breaking space -- &nbsp;
+        
+        // check if the full name length is appropriate
+        if     ( firstname.val().length === 0 ) validity = '';
+        else if( firstname.val().length > 32  ) tip = 'ime predugačko';
+        else                                    validity = '';
+        
+        // set the input background colour according to validity
+        firstname[0].setCustomValidity(validity);
+        // set the help tip
+        $('#ime-help').html(tip);
+        // reset the general form tip
+        $("#forma-help").html('');
+    });
+
+    // check if the user lastname field is valid, if it isn't output help text and change field background color
+    $("#prezime").on('input', function() {
+        let lastname = $(this);
+        
+        let validity = 'false';   // 'false' is false, '' is valid
+        let tip      = nbsp;      // non breaking space -- &nbsp;
+        
+        // check if the full name length is appropriate
+        if     ( lastname.val().length === 0 ) validity = '';
+        else if( lastname.val().length > 64  ) tip = 'ime predugačko';
+        else                                   validity = '';
+        
+        // set the input background colour according to validity
+        lastname[0].setCustomValidity(validity);
+        // set the help tip
+        $('#prezime-help').html(tip);
+        // reset the general form tip
+        $("#forma-help").html('');
+    });
+    
+    // check if the date field is valid, if it isn't output help text and change field background color
+    $("#datum").on('input', function() {
+        let date = $(this);
+        
+        let valid = date[0].checkValidity();
+        let tip   = nbsp;      // non breaking space -- &nbsp;
+        
+        // check if the date is in the correct format
+        if( !valid ) tip = 'neispravan format datuma';
+        
+        // set the help tip
+        $('#datum-help').html(tip);
+        // reset the general form tip
+        $("#forma-help").html('');
+    });
+
+    // check if the email field is valid, if it isn't output help text and change field background color
+    $("#imejl").on('input', function() {
+        let email = $(this);
+        
+        let validity = 'false';   // 'false' is false, '' is valid
+        let tip      = nbsp;      // non breaking space -- &nbsp;
+        let regex    = RegExp(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
+        
+        // check if the email length is appropriate and that it is in the correct format (html standard)
+        if     ( email.val().length === 0 ) validity = '';
+        else if( email.val().length > 128 ) tip = 'email predugačak';
+        else if( !regex.test(email.val()) ) tip = 'neispravan format email-a';
+        else                                validity = '';
+        
+        // set the input background colour according to validity
+        email[0].setCustomValidity(validity);
+        // set the help tip
+        $('#imejl-help').html(tip);
+        // reset the general form tip
+        $("#forma-help").html('');
+    });
+    
+    // check if the phone number field is valid, if it isn't output help text and change field background color
+    $("#telefon").on('input', function() {
+        let phonenum = $(this);
+        
+        let validity = 'false';   // 'false' is false, '' is valid
+        let tip      = nbsp;      // non breaking space -- &nbsp;
+        let regex    = RegExp(/\+[0-9]+/);
+        
+        // check if the username length is appropriate and that it only contains ascii symbols and spaces
+        if     ( phonenum.val().length === 0 ) validity = '';
+        else if( phonenum.val().length < 8   ) tip = 'broj telefona previše kratak';
+        else if( phonenum.val().length > 16  ) tip = 'broj telefona predugačak';
+        else if( !regex.test(phonenum.val()) ) tip = 'neispravan format broja telefona';
+        else                                   validity = '';
+        
+        // set the input background colour according to validity
+        phonenum[0].setCustomValidity(validity);
+        // set the help tip
+        $('#telefon-help').html(tip);
+        // reset the general form tip
+        $("#forma-help").html('');
+    });
+
+    // check if the phone number field is valid, if it isn't output help text and change field background color
+    $("#napomena").on('input', function() {
+        // reset the general form tip
+        $("#forma-help").html('');
+    });
+    
+    
+    // check the form fields when the user clicks the register button, if they are valid send a request
+    $("#zakazi").on('click', function() {
+        // reset the general form tip
+        $("#forma-help").html('');
+        
+        // if any of the form fields is invalid, don't send the request
+        if( $("#ime-help"     ).html() != nbsp
+         || $("#prezime-help" ).html() != nbsp
+         || $("#datum-help"   ).html() != nbsp
+         || $("#imejl-help"   ).html() != nbsp
+         || $("#telefon-help" ).html() != nbsp
+         || $("#napomena-help").html() != nbsp
+        )
+        {
+            $("#forma-help").html('forma nije ispravno popunjena');
+            return;
+        }
+    
+        // create a request
+        let request = {
+            ime:      $("#ime"     ).val(),
+            prezime:  $("#prezime" ).val(),
+            datum:    $("#datum"   ).val(),
+            imejl:    $("#imejl"   ).val(),
+            telefon:  $("#telefon" ).val()
+
+        };
+        
+        // if any of the form fields is empty, don't send the request
+        if( request.ime      === ""
+         || request.prezime  === ""
+         || request.datum    === ""
+         || request.imejl    === ""
+         || request.telefon  === ""
+         || request.napomena === ""
+        )
+        {
+            $("#forma-help").html('forma nije dovršena');
+            return;
+        }
+
+        // save the request in localstorage
+        // TODO: dovrsiti
+    })
+
 });
 
