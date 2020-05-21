@@ -279,7 +279,35 @@ $(document).ready(function () {
 
         // save the request in localstorage
         // TODO: dovrsiti
-    })
+    });
+
+
+
+    // change the language to English
+    $("#en").on('click', function() {
+        let file = window.location.pathname.split("/").pop();
+        let regex   = /^(.*)-sr.html$/;
+        
+        file = regex.exec(file);
+        if( file.length < 2 ) return;
+        
+        file = file[1];
+        file += '-en.html';
+        window.location.replace(file);
+    });
+
+    // change the language to Serbian
+    $("#en").on('click', function() {
+        let file = window.location.pathname.split("/").pop();
+        let regex   = /^(.*)-en.html$/;
+        
+        file = regex.exec(file);
+        if( file.length < 2 ) return;
+        
+        file = file[1];
+        file += '-sr.html';
+        window.location.replace(file);
+    });
 
 });
 
