@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <!-- head -->
 <head>
     <meta charset="utf-8">
@@ -16,19 +15,15 @@
     <!-- jQuery Custom Scroller -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- Print.js -->
-    <link rel="stylesheet" href="print.min.css">
-    <script src="print.min.js"></script>
     <!-- Font Awesome icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <!-- css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="!style.css">
     <!-- javascript -->
-    <script src="script.js"></script>
+    <script src="!script.js"></script>
 </head>
 
 
@@ -36,10 +31,10 @@
 <body class="d-flex flex-column">
 
     <!-- navbar -->
-    <div id="navbar" class="nav navbar-nav noselect">
+    <div id="navbar" class="nav navbar-nav">
         <!-- header -->
         <div class="row header m-0 px-4">
-            <a href="index.html" class="brand" style="font-size: xxx-large;"><b>Budi FIT</b></a>
+            <a href="pocetna-sr.html" class="brand" style="font-size: xxx-large;"><b>Budi FIT</b></a>
             <div class="spacer"></div>
             <div class="btn-group">
                 <button id="en" type="button" class="btn btn-outline-light">EN</button>
@@ -75,7 +70,9 @@
                         <i class="fas fa-align-justify fa-lg" style="color:#fafafa;"></i>
                     </li>
                     <!-- place class .active on the currently active link -->
-                    <li class="breadcrumb-item active"><a href="*">Moj nalog</a></li>
+                    <li class="breadcrumb-item"><a href="usluge-sr.html">Usluge</a></li>
+                    <li class="breadcrumb-item"><a href="treninzi-sr.html">Treninzi</a></li>
+                    <li class="breadcrumb-item active"><a href="#">Core Yoga</a></li>
                     <!-- ... -->
                 </ol>
                 
@@ -92,18 +89,18 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li><a href="index.html">Početna</a></li>
+            <li><a href="pocetna-sr.html">Početna</a></li>
             <li>
                 <a href="#usluge-submenu" data-toggle="collapse" class="dropdown-toggle">Usluge</a>
                 <ul class="collapse list-unstyled" id="usluge-submenu">
-                    <li><a href="treninzi.html">Treninzi</a></li>
-                    <li><a href="nutricionista.html">Nutricionista</a></li>
-                    <li><a href="masaze.html">Masaže</a></li>
+                    <li><a href="treninzi-sr.html">Treninzi</a></li>
+                    <li><a href="nutricionista-sr.html">Nutricionista</a></li>
+                    <li><a href="masaze-sr.html">Masaže</a></li>
                 </ul>
             </li>
-            <li><a href="zakazivanje.html">Zakazivanje treninga</a></li>
-            <li><a href="nalog.html">Moj nalog</a></li>
-            <li><a href="onama.html">O nama</a></li>
+            <li><a href="zakazivanje-sr.html">Zakazivanje treninga</a></li>
+            <li><a href="nalog-sr.html">Moj nalog</a></li>
+            <li><a href="o-nama-sr.html">O nama</a></li>
         </ul>
         
     </div>
@@ -112,19 +109,66 @@
     <div id="content" class="container-fluid">
         <div class='row content m-0 pt-3 pb-3'>
 			<div class="col-12 offset-md-1 col-md-10 p-0">
-                <br><h1>Moj nalog</h1><br>
-                <hr class='linija'><br>
-                <p>Text</p>
+				<br><h1>Core Yoga</h1><br><hr class='linija'><br>
+                <p>Core Yoga jača centralni deo tela, odakle mnogi problemi potiču. Core, centar vašeg tela, je grupa dubokih mišića zaduženih za stabilnost tela. Zahvaljujući ovim mišićima možemo uspravno hodati i sedeti, ali ako mišići trupa nisu dovoljno jaki, prime'ujemo nepravilno držanje tela i bolove u leđima.
+                    Core Yoga, u poređenju sa tradicionalnim stilovima yoge, više podseća na trening, pogotovo kada su u pitanju stomačni mišići, što znači da nije samo od benefita za vaše zdravlje, već i za vaš izgled.
+
+Core Yoga koristi poze specijalizovanje za oblikovanje struka i abdomena, i ukoliko je vaš cilj da se dovedete u liniju za leto, core yoga je pravi izbor. Core Yoga je dinamična varijacija yoge, koja je više fokusirana na samom treningu, nego na meditaciji.
+                </p>
+                <br><hr class='linija'><br>
+                <h5>Trajanje: 45 min</h5>
+                <h5>Težina: Srednje teško</h5>
 			</div>
         </div>
         <div class='row content m-0 pt-3 pb-3'>
             <div class="col-12 offset-md-1 col-md-10 p-0">
-
-
+                <button data-toggle="collapse" href='#collapse-1' class='btn btn-info prikazi'>Prikaži galeriju</button>
+                <div id="collapse-1" class="mt-2 ml-0 prikazi collapse border border-info">
+                    <div class="col-12 galerija">
+                        <div class="col-12 p-2"><h3>Galerija slika</h3><hr></div>
+                        <div class="row scrollable flex-row flex-nowrap">
+                            <div><img src='assets/coreyoga1.jpg'></div>
+                            <div><img src='assets/coreyoga2.jpg'></div>
+                        </div>
+                    </div>
+                    <div class="col-12 galerija">
+                        <div class="col-12 p-2"><h3>Video galerija</h3><hr></div>
+                        <div class="row scrollable flex-row flex-nowrap">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class='row content m-0 pt-3 pb-3'>
+			<div class="col-12 offset-md-1 col-md-10 p-0">
+				<form id='ocena'>
+                    <br><h5 id='natpis-ocena'>Prosečna ocena: 0</h5>
+                    Oceni:
+                    <button type='button' id='1' class='btn btn-light border border-secondary dugme-ocena'>1</button>
+                    <button type='button' id='2' class='btn btn-light border border-secondary dugme-ocena'>2</button>
+                    <button type='button' id='3' class='btn btn-light border border-secondary dugme-ocena'>3</button>
+                    <button type='button' id='4' class='btn btn-light border border-secondary dugme-ocena'>4</button>
+                    <button type='button' id='5' class='btn btn-light border border-secondary dugme-ocena'>5</button>
+                </form>
+			</div>
+        </div>
+        <div class='row content m-0 pt-3 pb-3'>
+			<div class="col-12 offset-md-1 col-md-10 p-0">
+				<form id='komentar'>
+                    <div class="row">
+                        <div class="col-8 col-sm-9 col-md-10"><input type='text' id='komentar-text' placeholder='Ostavite komentar' class='form-control'></div>
+                        <div class="col-4 col-sm-3 col-md-2"><button type='submit' id='postavi-komentar' class='btn btn-light border border-secondary'>Potvrdi</button></div>
+                    </div>
+                </form>
+			</div>
+        </div>
+        <div class='row content m-0 pt-3 pb-5'>
+			<div class="col-12 offset-md-1 col-md-10 p-0" id='komentari'>
+				<h4>Komentari:</h4>
+			</div>
+        </div>
     </div>
-
+    
     <!-- footer ----------------------------------------------------------------------------------------------------------------------->
 	<div class="footer">
 		Copyright 2020, Marko Stanojević i Maja Ličina, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu

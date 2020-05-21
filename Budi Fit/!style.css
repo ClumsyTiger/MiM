@@ -1,0 +1,405 @@
+/* colours ----------------------------------------------------------*/
+:root {
+	--body-color: #fafafa;
+	--p-color: #555555;
+
+	--badges-color: #c89666;
+	
+	--navbar-color: #e1b382;
+  
+	--sidebar-color: #e1b382;
+	--sidebar-header-color: #e1b382;
+	--sidebar-accent-color: #e1b382;
+	--sidebar-text-color: #ffffff;
+
+	--footer-color: #2d545e;
+}
+
+/* opste ------------------------------------------------------------*/
+body {
+  font-family: sans-serif;
+  background: var(--body-color);
+  margin-top:140px;
+  /*width:98.85%;*/
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: justify;
+  color: var(--p-color);
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* deo zaglavlja sa logo-om ----------------------------------------------*/
+.header {
+	background-color: var(--footer-color);
+	color: var(--sidebar-text-color);
+	text-align:left;
+	background-image:url("assets/banner.jpg");
+	background-size:100%;
+  height:100px;
+  align-items: center;
+}
+
+.header a {
+	color:white;
+}
+
+.header a:hover {
+	color:white;
+	text-decoration: none;
+}
+
+/* baneri ispod headera ------------------------------------------------------*/
+.badges {
+	background-color: var(--badges-color);
+	height: 40px;
+  text-align:center;
+}
+
+.badges li {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  font-size:20pt;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer ------------------------------------------------------------------------*/
+.footer {
+	background-color: var(--footer-color);
+	color: var(--sidebar-text-color);
+	text-align:center;
+	font-size:10pt;
+	padding-top:5px;
+  padding-bottom:5px;
+}
+
+/* navigacija -------------------------------------------------------------------*/
+#navbar {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+  z-index: 1000;
+  background-color: var(--navbar-color);
+}
+
+#navbar img {
+  height: 100px;
+}
+
+/* breadcrumbs----------------------------------------------------------------------*/
+.breadcrumb, .breadcrumb-item {
+  white-space: nowrap;
+}
+.breadcrumb .breadcrumb-item {
+  float: none;
+}
+.breadcrumb {
+  height:30px!important;
+  justify-content: center;
+}
+
+#breadcrumb li {
+	display: inline;
+}
+
+#breadcrumb {
+	height:30px;
+}
+
+/* iskacuci meni -----------------------------------------------------------*/
+#sidebar {
+  	position: fixed;
+  	top: 170px;
+  	width: 250px;
+  	height: 100%;
+  	z-index: 1000;
+    background-color: var(--sidebar-color);
+    background: var(--sidebar-color);
+    color: var(--sidebar-text-color);
+}
+
+/* za sakrivanje iskacuceg menija*/
+#sidebar.active {
+  margin-left: -250px;
+}
+
+/* polje koje zatvara otvoren meni*/
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: var(--sidebar-header-color);
+}
+
+#sidebar-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+  background: var(--sidebar-color);
+}
+
+#sidebar-dismiss:hover {
+  background: var(--sidebar-text-color);
+  color: var(--sidebar-color);
+}
+
+#sidebar a {
+  display: block;
+}
+#sidebar a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#sidebar ul p {
+  padding: 10px;
+  color: var(--sidebar-text-color);
+}
+
+#sidebar ul.components {
+  padding: 20px 0px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+}
+#sidebar ul li a:hover {
+  background: var(--sidebar-text-color);
+  color: var(--sidebar-color);
+}
+
+#sidebar ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: var(--sidebar-accent-color);
+}
+
+/* animations */
+#sidebar,
+#sidebar-dismiss,
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+  -webkit-transition: all 0.3s; /* Safari */
+  -o-transition: all 0.3s; /* Opera */
+  transition: all 0.3s; /* Firefox, Chrome, ... */
+}
+
+/* utilities */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+
+
+/* content --------------------------------------------------------------------------------*/
+/* odnosi se na celokupan prostor koji se razlikuje od stranice do stranice*/
+#content {
+  flex: 1 0 auto;
+  margin-top:30px;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
+}
+
+/* tackasta linija koja je na nekim stranicama koriscena kao divider*/
+.linija {
+  border-top: 3px dotted lightgray;
+}
+
+/* pojedinacni delovi sadrzaja stranice */
+.content {
+	margin-top:15px;
+	margin-bottom:15px;
+	padding:0px;
+	text-align:justify;
+  color: var(--p-color);
+}
+
+.content img {
+  width:100%;
+  vertical-align: middle;
+  padding-top: 15px;
+}
+
+.content h1,h3,h4,h5{
+  text-align: center;
+}
+
+
+/* stilizacija iznad se odnosila na elemente koji se pojavljuju na svim stranicama, dok je stilizacija ispod specificna */
+
+
+
+/* deo koji se sakriva na stranicama treninzi, i svim pojedinacnim stranicama treninga*/
+.prikazi {
+  font-size:15pt!important;
+  width:100%;
+  text-align: center;
+  display: block;
+  justify-content: space-between;
+}
+
+.prikazi button {
+  color: var(--p-color);
+  width:100%;
+}
+
+/* galerija na stranicama pojedinacnih treninga */
+.galerija {
+  background-color: white;
+  height:330px;
+}
+
+.galerija img {
+  height:200px!important;
+  width:auto!important;
+  align-self: left!important;
+}
+
+/* klasa omogucava da se sadrzaj galerije skroluje*/
+.scrollable {
+  padding:15px;
+  padding-left:0px;
+  padding-right:0px;
+  height:250px;
+  overflow-x: scroll;
+}
+
+.scrollable div {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* custom scrolbar traka u galeriji------------------------------------------------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+.scrollable::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.0);
+}
+
+/* Handle */
+.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(220, 220, 220, 0.5);
+}
+
+/* Handle on hover */
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(240, 240, 240, 0.5);
+}
+
+/* odnosi se na forme za ocenjivanje i komentarisanje na stranicama pojedinacnih treninga i na njihove elemente*/
+#ocena, #komentar {
+  text-align: center;
+}
+
+#ocena button {
+  margin-left:1%;
+  padding-left:2%;
+  padding-right:2%;
+}
+
+#komentar input {
+  width:100%;
+}
+#komentar button {
+  width:100%;
+}
+
+.kom {
+  width:100%;
+  background-color: white;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:15px;
+  text-align:justify;
+  margin-bottom:15px;
+}
+
+
+/* forme --------------------------------------------------------------------------------*/
+.form-group
+{
+  margin-bottom: 0;
+}
+#forma label
+{
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+#forma small
+{
+  font-size: 10px;
+  color: red;
+}
+
+/* forme --------------------------------------------------------------------------------*/
+.card-title {
+  margin-bottom: 6px;
+}
+
+.card-body {
+  font-size: 13px;
+}
+
+.card-body > * {
+  text-align: center;
+}
+
+
+
+/* ====== utilities ====== */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+.map-container {
+  padding: 0px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.map {
+  padding-top:    0px;
+  padding-bottom: 0px;
+  padding-left:   15px;
+  padding-right:  15px;
+  
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-clip: padding-box;
+}
+
+.spacer {
+  flex-grow: 1;
+}

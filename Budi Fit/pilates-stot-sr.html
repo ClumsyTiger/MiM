@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<!-- head -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budi fit</title>
+
+    <!-- Bootstrap, jQuery, Popper, Bootstrap js -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Font Awesome icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="!style.css">
+    <!-- javascript -->
+    <script src="!script.js"></script>
+</head>
+
+
+<!-- body -->
+<body class="d-flex flex-column">
+
+    <!-- navbar -->
+    <div id="navbar" class="nav navbar-nav">
+        <!-- header -->
+        <div class="row header m-0 px-4">
+            <a href="pocetna-sr.html" class="brand" style="font-size: xxx-large;"><b>Budi FIT</b></a>
+            <div class="spacer"></div>
+            <div class="btn-group">
+                <button id="en" type="button" class="btn btn-outline-light">EN</button>
+                <button id="sr" type="button" class="btn btn-outline-light">SR</button>
+            </div>
+        </div>
+
+        <!-- badges -->
+		<div class="row badges">
+			<div class="col-12">
+				<ul class='pl-0'>
+					<li>
+						<a href='https://www.instagram.com/'><i class="fab fa-instagram" style="color:#fafafa;"></i></a>
+					</li>
+					<li>
+						<a href='https://www.facebook.com/'><i class="fab fa-facebook-square" style="color:#fafafa;"></i></a>
+					</li>
+					<li>
+						<a href='https://twitter.com/'><i class="fab fa-twitter" style="color:#fafafa;"></i></a>
+					</li>
+					<li>
+						<a href='https://www.youtube.com/'><i class="fab fa-youtube" style="color:#fafafa;"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+        <div class='row'>
+			<!-- breadcrumb -->
+            <div class="col-12" id='breadcrumb'>
+                <ul class="pt-1">
+                    <li id="sidebar-collapse" class="breadcrumb-item px-2 py-0">
+                        <i class="fas fa-align-justify fa-lg" style="color:#fafafa;"></i>
+                    </li>
+                    <!-- place class .active on the currently active link -->
+                    <li class="breadcrumb-item"><a href="usluge-sr.html">Usluge</a></li>
+                    <li class="breadcrumb-item"><a href="treninzi-sr.html">Treninzi</a></li>
+                    <li class="breadcrumb-item active"><a href="#">Stot Pilates</a></li>
+                    <!-- ... -->
+                </ol>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- sidebar  -->
+    <div id="sidebar" class='active'>
+        <div id="sidebar-dismiss"><i class="fas fa-arrow-left"></i></div>
+
+        <div class="sidebar-header">
+            <h3>Navigacija</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li><a href="pocetna-sr.html">Početna</a></li>
+            <li>
+                <a href="#usluge-submenu" data-toggle="collapse" class="dropdown-toggle">Usluge</a>
+                <ul class="collapse list-unstyled" id="usluge-submenu">
+                    <li><a href="treninzi-sr.html">Treninzi</a></li>
+                    <li><a href="nutricionista-sr.html">Nutricionista</a></li>
+                    <li><a href="masaze-sr.html">Masaže</a></li>
+                </ul>
+            </li>
+            <li><a href="zakazivanje-sr.html">Zakazivanje treninga</a></li>
+            <li><a href="nalog-sr.html">Moj nalog</a></li>
+            <li><a href="o-nama-sr.html">O nama</a></li>
+        </ul>
+        
+    </div>
+
+    <!-- page content  ------------------------------------------------------------------------------------------------------------->
+    <div id="content" class="container-fluid">
+        <div class='row content m-0 pt-3 pb-3'>
+			<div class="col-12 offset-md-1 col-md-10 p-0">
+				<br><h1>Stot Pilates</h1><br><hr class='linija'><br>
+                <p>Glavna razlika između originalnog i Stot metoda je ta što u originalnom metodu, kičma tokom svih vežbi mora biti u ravnom položaju dok je u Stott metodu više neutralna. S vremenom su stručnjaci otkrili da stalno hodanje ispravljenih leđa može gotovo jednako uticati na kičmu kao i kad smo konstantno pogrbljeni. Neutralna kičma podstiče blagu zakrivljenost donjeg dela kičme i to se koristi sve dok je barem jedna noga na podu, ukoliko ležimo na leđima ili smo u vazduhu onda kičma treba da je ravna. Stot način vežbanja podrazumeva zagrevanje što priprema telo i otpušta pritisak u vratu i leđima. U Stot metodi se takođe koriste rekviziti kao što su lopta, valjci od spužve i traka.</p>
+                <br><hr class='linija'><br>
+                <h5>Trajanje: 60 min</h5>
+                <h5>Težina: Lako</h5>
+			</div>
+        </div>
+        <div class='row content m-0 pt-3 pb-3'>
+            <div class="col-12 offset-md-1 col-md-10 p-0">
+                <button data-toggle="collapse" href='#collapse-1' class='btn btn-info prikazi'>Prikaži galeriju</button>
+                <div id="collapse-1" class="mt-2 ml-0 prikazi collapse border border-info">
+                    <div class="col-12 galerija">
+                        <div class="col-12 p-2"><h3>Galerija slika</h3><hr></div>
+                        <div class="row scrollable flex-row flex-nowrap">
+                            <div><img src='assets/stotpilates1.jpg'></div>
+                            <div><img src='assets/stotpilates2.jpg'></div>
+                            <div><img src='assets/stotpilates3.jpg'></div>
+                        </div>
+                    </div>
+                    <div class="col-12 galerija">
+                        <div class="col-12 p-2"><h3>Video galerija</h3><hr></div>
+                        <div class="row scrollable flex-row flex-nowrap">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row content m-0 pt-3 pb-3'>
+			<div class="col-12 offset-md-1 col-md-10 p-0">
+				<form id='ocena'>
+                    <br><h5 id='natpis-ocena'>Prosečna ocena: 0</h5>
+                    Oceni:
+                    <button type='button' id='1' class='btn btn-light border border-secondary dugme-ocena'>1</button>
+                    <button type='button' id='2' class='btn btn-light border border-secondary dugme-ocena'>2</button>
+                    <button type='button' id='3' class='btn btn-light border border-secondary dugme-ocena'>3</button>
+                    <button type='button' id='4' class='btn btn-light border border-secondary dugme-ocena'>4</button>
+                    <button type='button' id='5' class='btn btn-light border border-secondary dugme-ocena'>5</button>
+                </form>
+			</div>
+        </div>
+        <div class='row content m-0 pt-3 pb-3'>
+			<div class="col-12 offset-md-1 col-md-10 p-0">
+				<form id='komentar'>
+                    <div class="row">
+                        <div class="col-8 col-sm-9 col-md-10"><input type='text' id='komentar-text' placeholder='Ostavite komentar' class='form-control'></div>
+                        <div class="col-4 col-sm-3 col-md-2"><button type='submit' id='postavi-komentar' class='btn btn-light border border-secondary'>Potvrdi</button></div>
+                    </div>
+                </form>
+			</div>
+        </div>
+        <div class='row content m-0 pt-3 pb-5'>
+			<div class="col-12 offset-md-1 col-md-10 p-0" id='komentari'>
+				<h4>Komentari:</h4>
+			</div>
+        </div>
+    </div>
+    
+    <!-- footer ----------------------------------------------------------------------------------------------------------------------->
+	<div class="footer">
+		Copyright 2020, Marko Stanojević i Maja Ličina, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
+	</div>
+    
+</body>
+
+
+</html>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <!-- head -->
 <head>
     <meta charset="utf-8">
@@ -16,19 +15,15 @@
     <!-- jQuery Custom Scroller -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- Print.js -->
-    <link rel="stylesheet" href="print.min.css">
-    <script src="print.min.js"></script>
     <!-- Font Awesome icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <!-- css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="!style.css">
     <!-- javascript -->
-    <script src="script.js"></script>
+    <script src="!script.js"></script>
 </head>
 
 
@@ -36,10 +31,10 @@
 <body class="d-flex flex-column">
 
     <!-- navbar -->
-    <div id="navbar" class="nav navbar-nav noselect">
+    <div id="navbar" class="nav navbar-nav">
         <!-- header -->
         <div class="row header m-0 px-4">
-            <a href="index.html" class="brand" style="font-size: xxx-large;"><b>Budi FIT</b></a>
+            <a href="pocetna-sr.html" class="brand" style="font-size: xxx-large;"><b>Budi FIT</b></a>
             <div class="spacer"></div>
             <div class="btn-group">
                 <button id="en" type="button" class="btn btn-outline-light">EN</button>
@@ -75,7 +70,7 @@
                         <i class="fas fa-align-justify fa-lg" style="color:#fafafa;"></i>
                     </li>
                     <!-- place class .active on the currently active link -->
-                    <li class="breadcrumb-item active"><a href="*">O nama</a></li>
+                    <li class="breadcrumb-item active"><a href="#">Usluge</a></li>
                     <!-- ... -->
                 </ol>
                 
@@ -92,108 +87,42 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li><a href="index.html">Početna</a></li>
+            <li><a href="pocetna-sr.html">Početna</a></li>
             <li>
                 <a href="#usluge-submenu" data-toggle="collapse" class="dropdown-toggle">Usluge</a>
                 <ul class="collapse list-unstyled" id="usluge-submenu">
-                    <li><a href="treninzi.html">Treninzi</a></li>
-                    <li><a href="nutricionista.html">Nutricionista</a></li>
-                    <li><a href="masaze.html">Masaže</a></li>
+                    <li><a href="treninzi-sr.html">Treninzi</a></li>
+                    <li><a href="nutricionista-sr.html">Nutricionista</a></li>
+                    <li><a href="masaze-sr.html">Masaže</a></li>
                 </ul>
             </li>
-            <li><a href="zakazivanje.html">Zakazivanje treninga</a></li>
-            <li><a href="nalog.html">Moj nalog</a></li>
-            <li><a href="onama.html">O nama</a></li>
+            <li><a href="zakazivanje-sr.html">Zakazivanje treninga</a></li>
+            <li><a href="nalog-sr.html">Moj nalog</a></li>
+            <li><a href="o-nama-sr.html">O nama</a></li>
         </ul>
         
     </div>
 
     <!-- page content  ------------------------------------------------------------------------------------------------------------->
     <div id="content" class="container-fluid">
-
         <div class='row content m-0 pt-3 pb-3'>
-			<div class="col-12 offset-md-1 col-md-10 p-0">
-                <br><h1>O nama</h1><br>
-                <hr class='linija'><br>
-			</div>
-        </div>
-
-        <div class='row content m-0 pt-3 pb-3'>
-            <div class="col-12 offset-md-1 col-md-10">
-
-                <div class="row">
-
-                    <div class="col-12" style="text-align: center;">
-                        <h3>Tim zaposlenih</h3><br>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3" style="width: 18rem;">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/core5.jpg">
-                            <div class="card-body">
-                                <h5 class="card-title">Zaposleni 1</h5>
-                                <p class="card-text">Instruktor joge</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3" style="width: 18rem;">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/core5.jpg">
-                            <div class="card-body">
-                                <h5 class="card-title">Zaposleni 2</h5>
-                                <p class="card-text">Instruktor pilatesa</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3" style="width: 18rem;">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/core5.jpg">
-                            <div class="card-body">
-                                <h5 class="card-title">Zaposleni 3</h5>
-                                <p class="card-text">Maser</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3" style="width: 18rem;">
-                        <div class="card">
-                            <img class="card-img-top" src="assets/core5.jpg">
-                            <div class="card-body">
-                                <h5 class="card-title">Zaposleni 4</h5>
-                                <p class="card-text">Nutricionista</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
+            <div class="col-12 col-md-4 p-4">
+                <h3>Treninzi</h3>
+                <hr>
+                <a href='treninzi-sr.html'><img src="assets/slika1.png"></a>
+            </div>
+            <div class="col-12 col-md-4 p-4">
+                <h3>Nutricionista</h3>
+                <hr>
+                <a href='nutricionista-sr.html'><img src="assets/slika4.jpg"></a>
+            </div>
+            <div class="col-12 col-md-4 p-4">
+                <h3>Masaže</h3>
+                <hr>
+                <a href='masaze-sr.html'><img src="assets/slika5.jpg"></a>
             </div>
         </div>
-        <br>
-
-        <div class='row content m-0 pt-3 pb-3'>
-            <div class="col-12 offset-md-1 col-md-10">
-                <h3>Nagrade</h3><br>
-                <p>Text</p>
-            </div>
-        </div>
-        <br>
-
-        <div class='row content m-0 pt-3 pb-3'>
-			<div class="col-12 offset-md-1 col-md-10">
-                <br><h3>Kontakt</h3><br>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p>Text</p>
-                    </div>
-                    <div class="map-container col-12 col-md-8">
-                        <img class="map" src="assets/core5.jpg">
-                    </div>
-                </div>
-                
-			</div>
-        </div>
-
-    </div>
+	</div>
 
     <!-- footer ----------------------------------------------------------------------------------------------------------------------->
 	<div class="footer">
