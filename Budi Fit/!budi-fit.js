@@ -309,5 +309,122 @@ $(document).ready(function () {
         window.location.replace(file);
     });
 
+
+
+    // define times of the day and days on which trainings are held
+    let times = ['08', '10', '12', '14', '16', '18', '20'];
+    let days  = ['pon', 'uto', 'sre', 'cet', 'pet', 'sub', 'ned'];
+
+    // define training types
+    let training_type = [
+        'card-aer', 'card-box', 'card-spi',
+        'core-bar', 'core-kla', 'yoga-yog',
+        'pila-kla', 'pila-ref', 'pila-sto',
+        'yoga-ash', 'yoga-pow', 'yoga-vin',
+    ];
+
+    // get termins for the current week and their type and availability
+    function getTermins()
+    {
+        let termins = JSON.parse(localStorage.getItem('termins'));
+        if( termins ) return termins;
+
+        termins = {};
+        for( let i = 0; i < days.length; i++ )
+        {
+            let day = days[i];
+            termins[day] = {};
+            
+            for( let j = 0; j < times.length; j++ )
+            {
+                let time = times[j];
+                termins[day][time] = {
+                    'type' : training_type[Math.floor(Math.random()*12)],
+                    'taken': false,
+                };
+            }
+
+        }
+
+        setTermins(termins);
+        return termins;
+    }
+
+    // set termins for the current week
+    function setTermins(termins)
+    {
+        if( !termins ) return;
+        localStorage.setItem('termins', JSON.stringify(termins));
+    }
+
+    // reserve a termin for a particular day and time, return true if the termin has been reserved
+    function reserveTermin(day, time)
+    {
+        if( jQuery.inArray(day,  days ) == -1 ) return;
+        if( jQuery.inArray(time, times) == -1 ) return;
+        
+        let termins = getTermins();
+        if( termins[day][time]['taken'] ) return false;
+
+        termins[day][time]['taken'] = true;
+        setTermins(termins);
+        return true;
+    }
+
+    // cancel a termin for a particular day and time, return if the termin has been cancelled
+    function cancelTermin(day, time)
+    {
+        if( jQuery.inArray(day,  days ) == -1 ) return;
+        if( jQuery.inArray(time, times) == -1 ) return;
+        
+        let termins = getTermins();
+        if( !termins[day][time]['taken'] ) return false;
+
+        termins[day][time]['taken'] = false;
+        setTermins(termins);
+        return true;
+    }
+
+
+
+    // initialize termins page section
+    $("#termini").ready(function() {
+        drawTermins('all');
+    });
+    
+    // draw the week calendar with termin badges
+    function drawTermins(type)
+    {
+        if( type !== "all" && jQuery.inArray(type, training_type) == -1 ) return;
+
+        let tbody = $("#termini tbody");
+        if( !tbody ) return;
+
+        tbody.empty();
+        let termins = getTermins();
+
+        
+        for( const time of times )
+        {
+            let row = $('<tr></tr>').appendTo(tbody);
+
+            for( const day of ['vreme'].concat(days) )
+            {
+                let cell = $("<td></td>").appendTo(row);
+                let cont = '';
+
+                if( day !== 'vreme' ) cont = '<button id="' + 'termin-' + termins[day] + '-' + termins[day][time] + '" class="btn btn-block badge">' + termins[day][time]['type'] + '</button>';
+                else                  cont = document.createTextNode(time + ':00');
+                
+                cont = $(cont).appendTo(cell);
+
+                //if( termins[day][time].taken == false )
+                    cont.addClass("btn-success");
+            }
+
+        }
+
+    }
+    
 });
 

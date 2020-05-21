@@ -107,8 +107,13 @@ a:focus {
   float: none;
 }
 .breadcrumb {
-  height:30px!important;
+  height: 30px !important;
   justify-content: center;
+}
+
+.breadcrumb-item a,
+.breadcrumb::before {
+  color: white;
 }
 
 #breadcrumb li {
@@ -357,7 +362,6 @@ a:focus {
   color: red;
 }
 
-/* forme --------------------------------------------------------------------------------*/
 .card-title {
   margin-bottom: 6px;
 }
@@ -368,6 +372,14 @@ a:focus {
 
 .card-body > * {
   text-align: center;
+}
+
+#termini th {
+  width: calc(92% / 8);
+}
+
+#termini th.spec {
+  width: calc(8%);
 }
 
 
