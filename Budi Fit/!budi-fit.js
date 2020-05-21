@@ -316,12 +316,22 @@ $(document).ready(function () {
     let days  = ['pon', 'uto', 'sre', 'cet', 'pet', 'sub', 'ned'];
 
     // define training types
+    let training_kind = [
+        'all', 'card', 'core', 'pila', 'yoga',
+    ];
     let training_type = [
         'card-aer', 'card-box', 'card-spi',
-        'core-bar', 'core-kla', 'yoga-yog',
+        'core-bar', 'core-kla', 'core-yog',
         'pila-kla', 'pila-ref', 'pila-sto',
         'yoga-ash', 'yoga-pow', 'yoga-vin',
     ];
+
+    let training_badge = {
+        'card': 'badge-success',
+        'core': 'badge-warning',
+        'pila': 'badge-primary',
+        'yoga': 'badge-info',
+    };
 
     // get termins for the current week and their type and availability
     function getTermins()
@@ -357,6 +367,27 @@ $(document).ready(function () {
         localStorage.setItem('termins', JSON.stringify(termins));
     }
 
+    // check if the termin has passed
+    function hasTerminPassed(day, time)
+    {
+        if( jQuery.inArray(day,  days ) == -1 ) return;
+        if( jQuery.inArray(time, times) == -1 ) return;
+
+        let curr_date  = new Date();
+        let curr_iday  = (curr_date.getDay() - 1) % 7;
+        let curr_itime = curr_date.getHours();
+
+        let iday = 0;
+        for( ; iday < days.length; iday++ )
+            if( day == days[iday] )
+                break;
+
+        let itime = parseInt(time);
+        
+        return ( curr_iday >  iday
+            || ( curr_iday == iday && curr_itime >= itime ) );
+    }
+
     // reserve a termin for a particular day and time, return true if the termin has been reserved
     function reserveTermin(day, time)
     {
@@ -365,6 +396,7 @@ $(document).ready(function () {
         
         let termins = getTermins();
         if( termins[day][time]['taken'] ) return false;
+        if( hasTerminPassed(day, time) ) return false;
 
         termins[day][time]['taken'] = true;
         setTermins(termins);
@@ -379,7 +411,8 @@ $(document).ready(function () {
         
         let termins = getTermins();
         if( !termins[day][time]['taken'] ) return false;
-
+        if( hasTerminPassed(day, time) ) return false;
+            
         termins[day][time]['taken'] = false;
         setTermins(termins);
         return true;
@@ -391,11 +424,17 @@ $(document).ready(function () {
     $("#termini").ready(function() {
         drawTermins('all');
     });
+
+    // initialize filters
+    $(".filter").on('click', function() {
+        let filter = $(this).attr('filter');
+        drawTermins(filter);
+    });
     
     // draw the week calendar with termin badges
     function drawTermins(type)
     {
-        if( type !== "all" && jQuery.inArray(type, training_type) == -1 ) return;
+        if( !type || jQuery.inArray(type, training_kind.concat(training_type)) == -1 ) return;
 
         let tbody = $("#termini tbody");
         if( !tbody ) return;
@@ -413,13 +452,40 @@ $(document).ready(function () {
                 let cell = $("<td></td>").appendTo(row);
                 let cont = '';
 
-                if( day !== 'vreme' ) cont = '<button id="' + 'termin-' + termins[day] + '-' + termins[day][time] + '" class="btn btn-block badge">' + termins[day][time]['type'] + '</button>';
-                else                  cont = document.createTextNode(time + ':00');
-                
+                if( day === 'vreme' )
+                {
+                    cont = document.createTextNode(time + ':00');
+                    cont = $(cont).appendTo(cell);
+                    continue;
+                }
+
+                let training      = termins[day][time];
+                let training_type = training['type'];
+                let training_kind = training_type.split('-')[0];
+                let badge         = training_badge[training_kind];
+
+                if( type !== 'all' &&  type !== training_kind && training_type !== type )
+                    continue;
+
+                cont = '<button id="' + 'termin-' + termins[day] + '-' + termins[day][time] + '" class="btn w-75 badge">' + termins[day][time]['type'] + '</button>';
                 cont = $(cont).appendTo(cell);
 
-                //if( termins[day][time].taken == false )
-                    cont.addClass("btn-success");
+                if     ( hasTerminPassed(day, time) ) cont.addClass('badge-secondary');
+                else if( training['taken'] === true ) cont.addClass('badge-light');
+                else                                  cont.addClass(badge);
+
+                cont.on('click', function() {
+                    if( reserveTermin(day, time) )
+                    {
+                        $(this).removeClass(badge);
+                        $(this).addClass('badge-light');
+                    }
+                    else if( cancelTermin(day, time) )
+                    {
+                        $(this).removeClass('badge-light');
+                        $(this).addClass(badge);
+                    }
+                });
             }
 
         }
