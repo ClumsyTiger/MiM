@@ -7,14 +7,14 @@ $(document).ready(function () {
 
     // ---- kod vezan za treninge -------------------------------------------------------------------------------------------------
     // ---- ocenjivanje
-    let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0];
+    let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(0,2);
     if($('#natpis-ocena')!=null && localStorage.getItem(stranica+' ocena')!=null) {
         let ocena = parseFloat(localStorage.getItem(stranica+' ocena'));
         $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
     }
 
     $('.dugme-ocena').on('click', function() {
-        let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0];
+        let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(0,2);
         if(localStorage.getItem(stranica+' ocena')!=null) {
             let ocena = parseFloat(localStorage.getItem(stranica+' ocena'));
             let brocena = parseInt(localStorage.getItem(stranica+' brocena'));
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     // ---- komentarisanje
     $('#komentar').on('submit', function() {
-        let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0];
+        let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(0,2);
         let brkomentara = localStorage.getItem(stranica+' brkomentara'); 
         if(brkomentara==null) {
             brkomentara=0;
