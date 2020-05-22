@@ -298,7 +298,7 @@ $(document).ready(function () {
     });
 
     // change the language to Serbian
-    $("#en").on('click', function() {
+    $("#sr").on('click', function() {
         let file = window.location.pathname.split("/").pop();
         let regex   = /^(.*)-en.html$/;
         
