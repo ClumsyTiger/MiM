@@ -382,6 +382,17 @@ a:focus {
   width: calc(8%);
 }
 
+#zakazano {
+  width: 300px;
+}
+
+#zakazano th {
+  width: calc(50% / 1);
+}
+
+#zakazano th.spec {
+  width: calc(50% / 2);
+}
 
 
 /* ====== utilities ====== */

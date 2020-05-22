@@ -277,8 +277,9 @@ $(document).ready(function () {
             return;
         }
 
-        // save the request in localstorage
-        // TODO: dovrsiti
+        // save the request to local storage
+        let pagename = $('meta[name="page-name"]').attr("content");
+        localStorage.setItem('zahtev-' + pagename, JSON.stringify(request));
     });
 
 
@@ -490,6 +491,61 @@ $(document).ready(function () {
 
         }
 
+    }
+
+
+
+    // initialize reserved termins
+    $("zakazano").ready(function() {
+        drawReservedTermins();
+    });
+
+    // draw reserved termins
+    function drawReservedTermins() {
+        let termins = getTermins();
+        
+        let tbody = $("#zakazano tbody");
+        if( !tbody ) return;
+        tbody.empty();
+
+
+        for( const day of days )
+        {
+            for( const time of times )
+            {
+                if( termins[day][time]['taken'] === true )
+                {
+                    let row = $('<tr></tr>').appendTo(tbody);
+                    let cell, cont;
+
+                    cell = $("<td></td>").appendTo(row);
+                    cont = document.createTextNode(day);
+                    cont = $(cont).appendTo(cell);
+
+                    cell = $("<td></td>").appendTo(row);
+                    cont = document.createTextNode(time + ':00');
+                    cont = $(cont).appendTo(cell);
+                    
+                    cell = $("<td></td>").appendTo(row);
+                    cont = $('<div class="badge w-50">' + termins[day][time]['type'] + '</div>').appendTo(cell);
+
+                    let training      = termins[day][time];
+                    let training_type = training['type'];
+                    let training_kind = training_type.split('-')[0];
+                    let badge         = training_badge[training_kind];
+    
+                    if( hasTerminPassed(day, time) ) cont.addClass('badge-secondary');
+                    else                             cont.addClass(badge);
+    
+                    cont = $('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>').appendTo(cell);
+                    cont = $("<div class='btn badge btn-outline-dark'>x</div>").appendTo(cell);
+                    cont.on('click', function() {
+                        if( cancelTermin(day, time) )
+                            drawReservedTermins();
+                    });
+                }
+            }
+        }
     }
     
 });
