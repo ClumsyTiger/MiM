@@ -131,13 +131,13 @@ $(document).ready(function () {
     // check if the firstname field is valid, if it isn't output help text and change field background color
     $("#ime").on('input', function() {
         let firstname = $(this);
-        
-        let validity = 'false';   // 'false' is false, '' is valid
-        let tip      = nbsp;      // non breaking space -- &nbsp;
+        let validity  = 'false';   // 'false' is false, '' is valid
+        let tip       = nbsp;           // non breaking space -- &nbsp;
+        let lang      = getPage().lang;
         
         // check if the full name length is appropriate
         if     ( firstname.val().length === 0 ) validity = '';
-        else if( firstname.val().length > 32  ) tip = 'ime predugačko';
+        else if( firstname.val().length > 32  ) tip = {'sr': 'ime predugačko', 'en': 'first name too long'}[lang];
         else                                    validity = '';
         
         // set the input background colour according to validity
@@ -151,13 +151,13 @@ $(document).ready(function () {
     // check if the user lastname field is valid, if it isn't output help text and change field background color
     $("#prezime").on('input', function() {
         let lastname = $(this);
-        
         let validity = 'false';   // 'false' is false, '' is valid
-        let tip      = nbsp;      // non breaking space -- &nbsp;
+        let tip      = nbsp;          // non breaking space -- &nbsp;
+        let lang     = getPage().lang;
         
         // check if the full name length is appropriate
         if     ( lastname.val().length === 0 ) validity = '';
-        else if( lastname.val().length > 64  ) tip = 'ime predugačko';
+        else if( lastname.val().length > 64  ) tip = {'sr': 'prezime predugačko', 'en': 'last name too long'}[lang];
         else                                   validity = '';
         
         // set the input background colour according to validity
@@ -170,13 +170,13 @@ $(document).ready(function () {
     
     // check if the date field is valid, if it isn't output help text and change field background color
     $("#datum").on('input', function() {
-        let date = $(this);
-        
+        let date  = $(this);
         let valid = date[0].checkValidity();
         let tip   = nbsp;      // non breaking space -- &nbsp;
-        
+        let lang  = getPage().lang;
+
         // check if the date is in the correct format
-        if( !valid ) tip = 'neispravan format datuma';
+        if( !valid ) tip = {'sr': 'neispravan format datuma', 'en': 'invalid date format'}[lang];
         
         // set the help tip
         $('#datum-help').html(tip);
@@ -186,16 +186,16 @@ $(document).ready(function () {
 
     // check if the email field is valid, if it isn't output help text and change field background color
     $("#imejl").on('input', function() {
-        let email = $(this);
-        
+        let email    = $(this);
         let validity = 'false';   // 'false' is false, '' is valid
         let tip      = nbsp;      // non breaking space -- &nbsp;
+        let lang     = getPage().lang;
         let regex    = RegExp(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
         
         // check if the email length is appropriate and that it is in the correct format (html standard)
         if     ( email.val().length === 0 ) validity = '';
-        else if( email.val().length > 128 ) tip = 'email predugačak';
-        else if( !regex.test(email.val()) ) tip = 'neispravan format email-a';
+        else if( email.val().length > 128 ) tip = {'sr': 'email predugačak',          'en': 'email too long'      }[lang];
+        else if( !regex.test(email.val()) ) tip = {'sr': 'neispravan format email-a', 'en': 'invalid email format'}[lang];
         else                                validity = '';
         
         // set the input background colour according to validity
@@ -209,16 +209,16 @@ $(document).ready(function () {
     // check if the phone number field is valid, if it isn't output help text and change field background color
     $("#telefon").on('input', function() {
         let phonenum = $(this);
-        
         let validity = 'false';   // 'false' is false, '' is valid
         let tip      = nbsp;      // non breaking space -- &nbsp;
+        let lang     = getPage().lang;
         let regex    = RegExp(/\+[0-9]+/);
         
         // check if the username length is appropriate and that it only contains ascii symbols and spaces
         if     ( phonenum.val().length === 0 ) validity = '';
-        else if( phonenum.val().length < 8   ) tip = 'broj telefona previše kratak';
-        else if( phonenum.val().length > 16  ) tip = 'broj telefona predugačak';
-        else if( !regex.test(phonenum.val()) ) tip = 'neispravan format broja telefona';
+        else if( phonenum.val().length < 8   ) tip = {'sr': 'broj telefona previše kratak',     'en': 'phone number too short'     }[lang];
+        else if( phonenum.val().length > 16  ) tip = {'sr': 'broj telefona predugačak',         'en': 'phone number too long'      }[lang];
+        else if( !regex.test(phonenum.val()) ) tip = {'sr': 'neispravan format broja telefona', 'en': 'invalid phone number format'}[lang];
         else                                   validity = '';
         
         // set the input background colour according to validity
@@ -240,6 +240,8 @@ $(document).ready(function () {
     $("#zakazi").on('click', function() {
         // reset the general form tip
         $("#forma-help").html('');
+        // get the current language
+        let lang = getPage().lang;
         
         // if any of the form fields is invalid, don't send the request
         if( $("#ime-help"     ).html() != nbsp
@@ -250,7 +252,7 @@ $(document).ready(function () {
          || $("#napomena-help").html() != nbsp
         )
         {
-            $("#forma-help").html('forma nije ispravno popunjena');
+            $("#forma-help").html({'sr': 'forma nije ispravno popunjena', 'en': 'invalid form'}[lang]);
             return;
         }
     
@@ -273,7 +275,7 @@ $(document).ready(function () {
          || request.napomena === ""
         )
         {
-            $("#forma-help").html('forma nije dovršena');
+            $("#forma-help").html({'sr': 'forma nije dovršena', 'en': 'incomplete form'}[lang]);
             return;
         }
 
@@ -284,31 +286,39 @@ $(document).ready(function () {
 
 
 
+    // get the current page and language
+    function getPage()
+    {
+        let page = window.location.pathname.split("/").pop();
+        let regex   = /^(.*)-(sr|en).html$/;
+
+        page = regex.exec(page);
+        if( page.length < 3 ) return { "file": "pocetna", "lang": "sr" };
+
+        return { "file": page[1], "lang": page[2] };
+    }
+
     // change the language to English
     $("#en").on('click', function() {
-        let file = window.location.pathname.split("/").pop();
-        let regex   = /^(.*)-sr.html$/;
-        
-        file = regex.exec(file);
-        if( file.length < 2 ) return;
-        
-        file = file[1];
-        file += '-en.html';
-        window.location.replace(file);
+        let page = getPage();
+        if( !page || page.lang == 'en' ) return;
+
+        let path = page.file + '-en.html';
+        window.location.replace(path);
     });
 
     // change the language to Serbian
     $("#sr").on('click', function() {
-        let file = window.location.pathname.split("/").pop();
-        let regex   = /^(.*)-en.html$/;
-        
-        file = regex.exec(file);
-        if( file.length < 2 ) return;
-        
-        file = file[1];
-        file += '-sr.html';
-        window.location.replace(file);
+        let page = getPage();
+        if( !page || page.lang == 'sr' ) return;
+
+        let path = page.file + '-sr.html';
+        window.location.replace(path);
     });
+
+    // set the language buttons active status
+    let lang = getPage().lang;
+    $("#" + lang).addClass("active");
 
 
 
