@@ -133,7 +133,7 @@ $(document).ready(function () {
         let firstname = $(this);
         let validity  = 'false';   // 'false' is false, '' is valid
         let tip       = nbsp;           // non breaking space -- &nbsp;
-        let lang      = getPage().lang;
+        let lang      = getLang();
         
         // check if the full name length is appropriate
         if     ( firstname.val().length === 0 ) validity = '';
@@ -153,7 +153,7 @@ $(document).ready(function () {
         let lastname = $(this);
         let validity = 'false';   // 'false' is false, '' is valid
         let tip      = nbsp;          // non breaking space -- &nbsp;
-        let lang     = getPage().lang;
+        let lang     = getLang();
         
         // check if the full name length is appropriate
         if     ( lastname.val().length === 0 ) validity = '';
@@ -173,7 +173,7 @@ $(document).ready(function () {
         let date  = $(this);
         let valid = date[0].checkValidity();
         let tip   = nbsp;      // non breaking space -- &nbsp;
-        let lang  = getPage().lang;
+        let lang  = getLang();
 
         // check if the date is in the correct format
         if( !valid ) tip = {'sr': 'neispravan format datuma', 'en': 'invalid date format'}[lang];
@@ -189,7 +189,7 @@ $(document).ready(function () {
         let email    = $(this);
         let validity = 'false';   // 'false' is false, '' is valid
         let tip      = nbsp;      // non breaking space -- &nbsp;
-        let lang     = getPage().lang;
+        let lang     = getLang();
         let regex    = RegExp(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
         
         // check if the email length is appropriate and that it is in the correct format (html standard)
@@ -211,7 +211,7 @@ $(document).ready(function () {
         let phonenum = $(this);
         let validity = 'false';   // 'false' is false, '' is valid
         let tip      = nbsp;      // non breaking space -- &nbsp;
-        let lang     = getPage().lang;
+        let lang     = getLang();
         let regex    = RegExp(/\+[0-9]+/);
         
         // check if the username length is appropriate and that it only contains ascii symbols and spaces
@@ -241,7 +241,7 @@ $(document).ready(function () {
         // reset the general form tip
         $("#forma-help").html('');
         // get the current language
-        let lang = getPage().lang;
+        let lang = getLang();
         
         // if any of the form fields is invalid, don't send the request
         if( $("#ime-help"     ).html() != nbsp
@@ -298,6 +298,8 @@ $(document).ready(function () {
         return { "file": page[1], "lang": page[2] };
     }
 
+    function getLang() { return getPage().lang; }
+
     // change the language to English
     $("#en").on('click', function() {
         let page = getPage();
@@ -317,14 +319,14 @@ $(document).ready(function () {
     });
 
     // set the language buttons active status
-    let lang = getPage().lang;
-    $("#" + lang).addClass("active");
+    $("#" + getLang()).addClass("active");
 
 
 
     // define times of the day and days on which trainings are held
     let times = ['08', '10', '12', '14', '16', '18', '20'];
-    let days  = ['pon', 'uto', 'sre', 'cet', 'pet', 'sub', 'ned'];
+    let days  = { 'sr': ['pon', 'uto', 'sre', 'cet', 'pet', 'sub', 'ned'],
+                  'en': ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'], };
 
     // define training types
     let training_kind = [
@@ -351,9 +353,9 @@ $(document).ready(function () {
         if( termins ) return termins;
 
         termins = {};
-        for( let i = 0; i < days.length; i++ )
+        for( let i = 0; i < days['sr'].length; i++ )
         {
-            let day = days[i];
+            let day = days['sr'][i];
             termins[day] = {};
             
             for( let j = 0; j < times.length; j++ )
@@ -381,16 +383,16 @@ $(document).ready(function () {
     // check if the termin has passed
     function hasTerminPassed(day, time)
     {
-        if( jQuery.inArray(day,  days ) == -1 ) return;
-        if( jQuery.inArray(time, times) == -1 ) return;
+        if( jQuery.inArray(day,  days['sr']) == -1 ) return;
+        if( jQuery.inArray(time, times     ) == -1 ) return;
 
         let curr_date  = new Date();
         let curr_iday  = (curr_date.getDay() - 1) % 7;
         let curr_itime = curr_date.getHours();
 
         let iday = 0;
-        for( ; iday < days.length; iday++ )
-            if( day == days[iday] )
+        for( ; iday < days['sr'].length; iday++ )
+            if( day == days['sr'][iday] )
                 break;
 
         let itime = parseInt(time);
@@ -402,8 +404,8 @@ $(document).ready(function () {
     // reserve a termin for a particular day and time, return true if the termin has been reserved
     function reserveTermin(day, time)
     {
-        if( jQuery.inArray(day,  days ) == -1 ) return;
-        if( jQuery.inArray(time, times) == -1 ) return;
+        if( jQuery.inArray(day,  days['sr'] ) == -1 ) return;
+        if( jQuery.inArray(time, times      ) == -1 ) return;
         
         let termins = getTermins();
         if( termins[day][time]['taken'] ) return false;
@@ -417,8 +419,8 @@ $(document).ready(function () {
     // cancel a termin for a particular day and time, return if the termin has been cancelled
     function cancelTermin(day, time)
     {
-        if( jQuery.inArray(day,  days ) == -1 ) return;
-        if( jQuery.inArray(time, times) == -1 ) return;
+        if( jQuery.inArray(day,  days['sr'] ) == -1 ) return;
+        if( jQuery.inArray(time, times      ) == -1 ) return;
         
         let termins = getTermins();
         if( !termins[day][time]['taken'] ) return false;
@@ -458,7 +460,7 @@ $(document).ready(function () {
         {
             let row = $('<tr></tr>').appendTo(tbody);
 
-            for( const day of ['vreme'].concat(days) )
+            for( const day of ['vreme'].concat(days['sr']) )
             {
                 let cell = $("<td></td>").appendTo(row);
                 let cont = '';
@@ -512,6 +514,7 @@ $(document).ready(function () {
 
     // draw reserved termins
     function drawReservedTermins() {
+        let lang = getLang();
         let termins = getTermins();
         
         let tbody = $("#zakazano tbody");
@@ -519,8 +522,9 @@ $(document).ready(function () {
         tbody.empty();
 
 
-        for( const day of days )
+        for( let d = 0; d < days['sr'].length; d++ )
         {
+            const day = days['sr'][d];
             for( const time of times )
             {
                 if( termins[day][time]['taken'] === true )
@@ -529,7 +533,7 @@ $(document).ready(function () {
                     let cell, cont;
 
                     cell = $("<td></td>").appendTo(row);
-                    cont = document.createTextNode(day);
+                    cont = document.createTextNode(days[lang][d]);
                     cont = $(cont).appendTo(cell);
 
                     cell = $("<td></td>").appendTo(row);
