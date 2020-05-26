@@ -362,6 +362,16 @@ a:focus {
   color: red;
 }
 
+.card-container {
+  width: 18rem;
+  padding-top:    15px;
+  padding-bottom: 15px;
+}
+
+.card-img-top {
+  padding-top: 0px !important;
+}
+
 .card-title {
   margin-bottom: 6px;
 }
