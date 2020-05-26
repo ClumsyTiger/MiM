@@ -8,9 +8,11 @@ $(document).ready(function () {
     // ---- kod vezan za treninge -------------------------------------------------------------------------------------------------
     // ---- ocenjivanje
     let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(0,2);
+    let jezik = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(-1)[0];
     if($('#natpis-ocena')!=null && localStorage.getItem(stranica+' ocena')!=null) {
         let ocena = parseFloat(localStorage.getItem(stranica+' ocena'));
-        $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
+        if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
+        else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
     }
 
     $('.dugme-ocena').on('click', function() {
@@ -21,12 +23,14 @@ $(document).ready(function () {
             ocena=(ocena*brocena+parseInt($(this).attr('id')))/++brocena;
             localStorage.setItem(stranica+' ocena', ocena.toFixed(2));
             localStorage.setItem(stranica+' brocena', brocena);
-            $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2)); 
+            if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
+        else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
         } else {
             let ocena=parseInt($(this).attr('id'));
             localStorage.setItem(stranica+' ocena', ocena);
             localStorage.setItem(stranica+' brocena', 1);
-            $('#natpis-ocena').text('Prosečna ocena: '+ocena); 
+            if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
+        else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
         }
     })
 
@@ -53,7 +57,8 @@ $(document).ready(function () {
         for(let i=0; i<brkomentara; i++) {
             let komentar = localStorage.getItem(stranica+' komentar'+i);
             let datum = localStorage.getItem(stranica+' datum'+i);
-            $(komentari).append('<div class="kom border border-info"><p>'+komentar+'</p>Postavljeno: '+datum+'</div>');
+            if(jezik==="en") $(komentari).append('<div class="kom border border-info"><p>'+komentar+'</p>Submitted: '+datum+'</div>');
+            else $(komentari).append('<div class="kom border border-info"><p>'+komentar+'</p>Postavljeno: '+datum+'</div>');
         }
     }
 
