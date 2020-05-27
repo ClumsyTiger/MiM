@@ -566,6 +566,28 @@ $(document).ready(function () {
             }
         }
     }
+
+    // ------------- najpopularniji treninzi -----------------------------------------------------------------------------------------
+    var i, ocene = [];
+    let query1 = / ocena/g;
+    for (i in localStorage) {
+        if (localStorage.hasOwnProperty(i)) {
+            if (i.match(query1) || (!query1 && typeof i === 'string')) {
+                value = localStorage.getItem(i);
+                ocene.push({key:i,val:value});
+            }
+        }
+    }
+    ocene.sort(function (a, b) { return a.val-b.val; });
+    if(ocene.length>=3) {
+        let jezik = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(1)[0];
+        for(let i = 0; i<3; i++) {
+            let prvi = ocene.pop();
+            let putanja =  prvi.key.split(" ")[0].split(",")[0]+"-"+prvi.key.split(" ")[0].split(",")[1];
+            $("#najpopularniji"+(i+1)).html("<h4>"+prvi.key.split(" ")[0].split(",")[0]+" - "+prvi.key.split(" ")[0].split(",")[1]+
+            "</h4><hr><a href='"+putanja+"-"+jezik+".html'><img src='assets/"+putanja+"1.jpg'></a>");
+        }
+    }
     
 });
 
