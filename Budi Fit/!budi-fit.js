@@ -15,40 +15,59 @@ $(document).ready(function () {
         else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
     }
 
+    function prisustvovao(stranica) {
+        let termins = getTermins();
+        let tip = stranica[0].slice(0,4)+"-"+stranica[1].slice(0,3);
+        for(day of days['sr']) {
+            for(time of times) {
+                if(termins[day][time].type === tip && termins[day][time].taken && hasTerminPassed(day, time)) return true;
+            }
+        }
+        return false;
+    }
+
     $('.dugme-ocena').on('click', function() {
         let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(0,2);
-        if(localStorage.getItem(stranica+' ocena')!=null) {
-            let ocena = parseFloat(localStorage.getItem(stranica+' ocena'));
-            let brocena = parseInt(localStorage.getItem(stranica+' brocena'));
-            ocena=(ocena*brocena+parseInt($(this).attr('id')))/++brocena;
-            localStorage.setItem(stranica+' ocena', ocena.toFixed(2));
-            localStorage.setItem(stranica+' brocena', brocena);
-            if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
-        else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
+        if(prisustvovao(stranica)) {
+            if(localStorage.getItem(stranica+' ocena')!=null) {
+                let ocena = parseFloat(localStorage.getItem(stranica+' ocena'));
+                let brocena = parseInt(localStorage.getItem(stranica+' brocena'));
+                ocena=(ocena*brocena+parseInt($(this).attr('id')))/++brocena;
+                localStorage.setItem(stranica+' ocena', ocena.toFixed(2));
+                localStorage.setItem(stranica+' brocena', brocena);
+                if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
+            else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
+            } else {
+                let ocena=parseInt($(this).attr('id'));
+                localStorage.setItem(stranica+' ocena', ocena);
+                localStorage.setItem(stranica+' brocena', 1);
+                if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
+            else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
+            }
         } else {
-            let ocena=parseInt($(this).attr('id'));
-            localStorage.setItem(stranica+' ocena', ocena);
-            localStorage.setItem(stranica+' brocena', 1);
-            if(jezik==="en") $('#natpis-ocena').text('Rating: '+ocena.toFixed(2));
-        else $('#natpis-ocena').text('Prosečna ocena: '+ocena.toFixed(2));
+            alert("Ne možete oceniti trening kome niste prisustvovali");
         }
     })
 
     // ---- komentarisanje
     $('#komentar').on('submit', function() {
         let stranica = $(location).attr('pathname').split('/').slice(-1)[0].split('.').slice(0)[0].split('-').slice(0,2);
-        let brkomentara = localStorage.getItem(stranica+' brkomentara'); 
-        if(brkomentara==null) {
-            brkomentara=0;
+        if(prisustvovao(stranica)) {
+            let brkomentara = localStorage.getItem(stranica+' brkomentara'); 
+            if(brkomentara==null) {
+                brkomentara=0;
+            } else {
+                brkomentara=parseInt(brkomentara);
+            }
+            let komentar=$('#komentar-text').val();
+            if(komentar=='') return;
+            let datum = new Date().toISOString().replace(/T/,', ').replace(/Z/, ' ').replace(/\.[0-9]{3}/,' ');
+            localStorage.setItem(stranica+' komentar'+brkomentara, komentar);
+            localStorage.setItem(stranica+' brkomentara',brkomentara+1);
+            localStorage.setItem(stranica+' datum'+brkomentara,datum);
         } else {
-            brkomentara=parseInt(brkomentara);
+            alert("Ne možete komentarisati trening kome niste prisustvovali");
         }
-        let komentar=$('#komentar-text').val();
-        if(komentar=='') return;
-        let datum = new Date().toISOString().replace(/T/,', ').replace(/Z/, ' ').replace(/\.[0-9]{3}/,' ');
-        localStorage.setItem(stranica+' komentar'+brkomentara, komentar);
-        localStorage.setItem(stranica+' brkomentara',brkomentara+1);
-        localStorage.setItem(stranica+' datum'+brkomentara,datum);
     })
 
     //prikaz komentara
